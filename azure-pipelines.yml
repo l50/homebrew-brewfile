@@ -16,6 +16,7 @@ steps:
 - script: |
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   displayName: 'Install Homebrew and brew bundle'
+  
 - script: |
     brew bundle
   displayName: 'Install dependencies from Brewfile'
