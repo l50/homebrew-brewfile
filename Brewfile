@@ -40,3 +40,9 @@ cask "iterm2"
 brew "lastpass-cli"
 cask "robo-3t" # Useful for mongo stuff
 cask "vagrant"
+cask "signal"
+
+# Bug Bounty Hunting
+## Recon
+tap "caffix/amass"
+brew "amass"
