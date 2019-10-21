@@ -1,4 +1,5 @@
 tap "homebrew/bundle"
+tap "caffix/amass"
 
 # Nix utilities
 brew "coreutils" # GNU
@@ -44,5 +45,4 @@ cask "signal"
 
 # Bug Bounty Hunting
 ## Recon
-tap "caffix/amass"
 brew "amass"
