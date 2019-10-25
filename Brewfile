@@ -42,6 +42,8 @@ brew "lastpass-cli"
 cask "robo-3t" # Useful for mongo stuff
 cask "vagrant"
 cask "signal"
+cask "spotify"
+cask "slack"
 
 # Bug Bounty Hunting
 ## Recon
