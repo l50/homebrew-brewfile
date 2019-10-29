@@ -13,6 +13,7 @@ brew "wget" # GNU
 
 # Cloud stuff
 brew "awscli"
+brew "terraform"
 
 # Development tools and languages
 brew "ansible"
