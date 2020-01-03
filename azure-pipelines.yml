@@ -18,5 +18,6 @@ steps:
   displayName: 'Install Homebrew and brew bundle'
   
 - script: |
+    brew unlink python@2
     brew bundle
   displayName: 'Install dependencies from Brewfile'

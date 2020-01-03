@@ -10,6 +10,7 @@ brew "netcat" # GNU
 brew "tree"
 brew "watch" # Use instead of while true; do;
 brew "wget" # GNU
+brew "gnu-sed" # GNU
 
 # Cloud stuff
 brew "awscli"
@@ -47,5 +48,6 @@ cask "spotify"
 cask "slack"
 
 # Bug Bounty Hunting
-## Recon
-brew "amass"
+brew "amass" # Great recon tool
+brew "pdfgrep" # Useful for finding things in pdfs
+brew "exiftool" # Interact with and manipulate metadata 
