@@ -2,18 +2,21 @@ tap "homebrew/bundle"
 tap "caffix/amass"
 
 # Nix utilities
+brew "bash"
 brew "coreutils" # GNU
+brew "gnu-sed" # GNU
 brew "grep" # GNU
 brew "htop"
 brew "logrotate"
 brew "netcat" # GNU
 brew "tree"
+brew "unrar"
 brew "watch" # Use instead of while true; do;
 brew "wget" # GNU
-brew "gnu-sed" # GNU
 
 # Cloud stuff
 brew "awscli"
+brew "packer"
 brew "terraform"
 
 # Development tools and languages
@@ -22,8 +25,11 @@ brew "colordiff"
 brew "docker-compose"
 cask "insomnia"
 brew "go"
-cask "visual-studio-code"
+brew "macvim"
+brew "node"
 brew "tmux"
+cask "vagrant"
+cask "visual-studio-code"
 
 # Pipenv and pyenv with dependencies
 brew "xz"
@@ -31,6 +37,7 @@ brew "pyenv"
 brew "pipenv"
 
 # Productivity utilities
+cask "iterm2"
 cask "scroll-reverser"
 cask "spectacle" # Keyboard shortcuts for modifying the screen layout
 
@@ -47,7 +54,10 @@ cask "signal"
 cask "spotify"
 cask "slack"
 
-# Bug Bounty Hunting
+# Security tools
 brew "amass" # Great recon tool
+brew "exiftool" # Interact with and manipulate metadata
+brew "exploitdb"
+brew "nmap"
 brew "pdfgrep" # Useful for finding things in pdfs
-brew "exiftool" # Interact with and manipulate metadata 
+cask "wireshark"
