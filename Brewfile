@@ -1,5 +1,5 @@
-tap "homebrew/bundle"
 tap "caffix/amass"
+tap "homebrew/bundle"
 
 # Nix utilities
 brew "bash"
@@ -21,12 +21,14 @@ brew "terraform"
 
 # Development tools and languages
 brew "ansible"
+cask "bloomrpc" # Tool for debugging GRPC  
 brew "colordiff"
 brew "docker-compose"
-cask "insomnia"
+cask "insomnia" # Alternative to postman
 brew "go"
 brew "macvim"
 brew "node"
+cask "postman" # Useful for API testing
 brew "tmux"
 cask "vagrant"
 cask "visual-studio-code"
@@ -45,14 +47,15 @@ cask "rectangle" # Keyboard shortcuts for modifying the screen layout
 cask "firefox"
 cask "google-chrome"
 
+# Chat apps
+cask "signal"
+cask "slack"
+
 # Miscellaneous
 cask "iterm2"
 brew "lastpass-cli"
 cask "robo-3t" # Useful for mongo stuff
-cask "vagrant"
-cask "signal"
 cask "spotify"
-cask "slack"
 
 # Security tools
 brew "amass" # Great recon tool
