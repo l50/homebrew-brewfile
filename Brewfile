@@ -39,7 +39,7 @@ brew "pipenv"
 # Productivity utilities
 cask "iterm2"
 cask "scroll-reverser"
-cask "spectacle" # Keyboard shortcuts for modifying the screen layout
+cask "rectangle" # Keyboard shortcuts for modifying the screen layout
 
 # Web browsers
 cask "firefox"
