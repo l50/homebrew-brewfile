@@ -46,6 +46,7 @@ cask "rectangle" # Keyboard shortcuts for modifying the screen layout
 # Web browsers
 cask "firefox"
 cask "google-chrome"
+cask "chromium"
 
 # Chat apps
 cask "signal"
