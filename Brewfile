@@ -65,3 +65,4 @@ brew "exploitdb"
 brew "nmap"
 brew "pdfgrep" # Useful for finding things in pdfs
 cask "wireshark"
+brew "jadx" # Dex to java decompiler - used android security work
