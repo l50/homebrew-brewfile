@@ -62,6 +62,7 @@ cask "spotify"
 brew "amass" # Great recon tool
 brew "exiftool" # Interact with and manipulate metadata
 brew "exploitdb"
+brew "findomain" # Find new domains associated with a target
 brew "nmap"
 brew "pdfgrep" # Useful for finding things in pdfs
 cask "wireshark"
