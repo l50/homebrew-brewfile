@@ -28,7 +28,7 @@ cask "insomnia" # Alternative to postman
 brew "go"
 brew "git"
 brew "macvim"
-brew "node"
+#brew "node"
 cask "postman" # Useful for API testing
 brew "tmux"
 cask "vagrant"
@@ -58,7 +58,7 @@ brew "lastpass-cli"
 cask "robo-3t" # Useful for mongo stuff
 cask "spotify"
 
-# Security tools
+# Generic security tools
 brew "amass" # Great recon tool
 brew "exiftool" # Interact with and manipulate metadata
 brew "exploitdb"
@@ -66,4 +66,7 @@ brew "findomain" # Find new domains associated with a target
 brew "nmap"
 brew "pdfgrep" # Useful for finding things in pdfs
 cask "wireshark"
-brew "jadx" # Dex to java decompiler - used android security work
+
+# Android security tools
+brew "jadx" # Dex to java decompiler - used for android security work
+brew "apktool"
