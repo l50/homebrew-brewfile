@@ -32,6 +32,8 @@ brew "macvim"
 cask "postman" # Useful for API testing
 brew "tmux"
 cask "vagrant"
+cask "virtualbox"
+cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 
 # Pipenv and pyenv with dependencies
