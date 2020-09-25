@@ -30,6 +30,7 @@ brew "git"
 brew "macvim"
 #brew "node"
 cask "postman" # Useful for API testing
+brew "jq"
 brew "tmux"
 cask "vagrant"
 cask "visual-studio-code"
