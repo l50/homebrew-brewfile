@@ -18,7 +18,10 @@ steps:
   displayName: 'Install Homebrew and brew bundle'
   
 - script: |
-    brew unlink node@6
-    brew unlink python@2
+    # These steps need to be done to install awscli without any errors
+    rm '/usr/local/bin/aws'
+    rm '/usr/local/bin/aws_completer'
+    rm '/usr/local/bin/2to3'
+    # End annoying steps
     brew bundle
   displayName: 'Install dependencies from Brewfile'

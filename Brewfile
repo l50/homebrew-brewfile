@@ -9,8 +9,8 @@ brew "grep" # GNU
 brew "htop"
 brew "logrotate"
 brew "netcat" # GNU
+brew "p7zip" # 7z
 brew "tree"
-brew "unrar"
 brew "watch" # Use instead of while true; do;
 brew "wget" # GNU
 
@@ -27,12 +27,13 @@ brew "docker-compose"
 cask "insomnia" # Alternative to postman
 brew "go"
 brew "git"
-brew "macvim"
+brew "jq"
+brew "mysql-client"
 #brew "node"
 cask "postman" # Useful for API testing
-brew "jq"
 brew "tmux"
 cask "vagrant"
+brew "vim"
 cask "virtualbox"
 cask "virtualbox-extension-pack"
 cask "visual-studio-code"
@@ -55,17 +56,23 @@ cask "chromium"
 # Chat apps
 cask "signal"
 cask "slack"
+cask "discord"
 
 # Miscellaneous
 brew "lastpass-cli"
 cask "robo-3t" # Useful for mongo stuff
 cask "spotify"
 
-# Generic security tools
+# Security tools
 brew "amass" # Great recon tool
+cask "blockblock" # Monitor for persistent components
 brew "exiftool" # Interact with and manipulate metadata
 brew "exploitdb"
 brew "findomain" # Find new domains associated with a target
+cask "knockknock" # Notification when a persistent component is added
+cask "netiquette" # Network monitor
+# cask "oversight" # Notify when mic or webcam are activated
+brew "sqlmap"
 brew "nmap"
 brew "pdfgrep" # Useful for finding things in pdfs
 cask "wireshark"
