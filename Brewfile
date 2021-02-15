@@ -4,7 +4,9 @@ tap "homebrew/bundle"
 # Nix utilities
 brew "bash"
 brew "coreutils" # GNU
+brew "curl"
 brew "gnu-sed" # GNU
+brew "gnu-tar" # GNU
 brew "grep" # GNU
 brew "htop"
 brew "logrotate"
@@ -16,6 +18,7 @@ brew "wget" # GNU
 
 # Cloud stuff
 brew "awscli"
+brew "helm"
 brew "packer"
 brew "terraform"
 
@@ -72,11 +75,13 @@ brew "findomain" # Find new domains associated with a target
 cask "knockknock" # Notification when a persistent component is added
 cask "netiquette" # Network monitor
 # cask "oversight" # Notify when mic or webcam are activated
+brew "spoof-mac" # MAC address spoofing
 brew "sqlmap"
 brew "nmap"
 brew "pdfgrep" # Useful for finding things in pdfs
 cask "wireshark"
 
 # Android security tools
-brew "jadx" # Dex to java decompiler - used for android security work
 brew "apktool"
+brew "jadx" # Dex to java decompiler - used for android security work
+
