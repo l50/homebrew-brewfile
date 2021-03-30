@@ -18,10 +18,16 @@ steps:
   displayName: 'Install Homebrew and brew bundle'
   
 - script: |
-    # These steps need to be done to install awscli without any errors
     rm '/usr/local/bin/aws'
     rm '/usr/local/bin/aws_completer'
     rm '/usr/local/bin/2to3'
-    # End annoying steps
+  displayName: 'Remove existing awscli components to avoid errors'
+
+- script: |
+    rm '/usr/local/bin/go'
+    rm '/usr/local/bin/gofmt'
+  displayName: 'Remove existing golang components to avoid errors'
+
+- script: |
     brew bundle
   displayName: 'Install dependencies from Brewfile'
