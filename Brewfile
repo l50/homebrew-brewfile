@@ -19,6 +19,7 @@ brew "wget" # GNU
 # Cloud stuff
 brew "awscli"
 brew "helm"
+cask "google-cloud-sdk"
 brew "packer"
 brew "terraform"
 
