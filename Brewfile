@@ -12,6 +12,7 @@ brew "htop"
 brew "logrotate"
 brew "netcat" # GNU
 brew "p7zip" # 7z
+brew "shfmt" # linting for bash scripts
 brew "tree"
 brew "watch" # Use instead of while true; do;
 brew "wget" # GNU
