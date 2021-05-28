@@ -21,6 +21,8 @@ brew "wget" # GNU
 brew "awscli"
 brew "helm"
 cask "google-cloud-sdk"
+# Used by AWS to connect to instances w/o SSH key
+cask "session-manager-plugin"
 brew "packer"
 brew "terraform"
 
