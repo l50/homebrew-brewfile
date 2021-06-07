@@ -29,8 +29,8 @@ brew "terraform"
 # Development tools and languages
 brew "ansible"
 cask "bloomrpc" # Tool for debugging GRPC
+cask "docker"
 brew "colordiff"
-brew "docker-compose"
 cask "insomnia" # Alternative to postman
 brew "go"
 brew "git"
@@ -88,4 +88,3 @@ cask "wireshark"
 # Android security tools
 brew "apktool"
 brew "jadx" # Dex to java decompiler - used for android security work
-
