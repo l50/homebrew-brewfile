@@ -25,6 +25,7 @@ cask "google-cloud-sdk"
 cask "session-manager-plugin"
 brew "packer"
 brew "terraform"
+brew "terragrunt"
 
 # Development tools and languages
 brew "ansible"
