@@ -2,6 +2,7 @@ tap "caffix/amass"
 tap "homebrew/bundle"
 
 # Nix utilities
+brew "aspell" # Check spelling
 brew "bash"
 brew "coreutils" # GNU
 brew "curl"
