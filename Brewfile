@@ -34,9 +34,9 @@ cask "bloomrpc" # Tool for debugging GRPC
 cask "docker"
 brew "colordiff"
 cask "insomnia" # Alternative to postman
-brew "go"
 brew "git"
-brew "jq"
+brew "jq" # CLI tool to interact with JSON
+brew "yq" # CLI tool to interact with YAML
 brew "mysql-client"
 #brew "node"
 cask "postman" # Useful for API testing
@@ -67,6 +67,7 @@ cask "chromium"
 cask "signal"
 cask "slack"
 cask "discord"
+cask "messenger"
 
 # Miscellaneous
 brew "lastpass-cli"
