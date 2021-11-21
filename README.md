@@ -1,6 +1,6 @@
 # homebrew-brewfile
-[![Build Status](https://dev.azure.com/jaysonegrace/homebrew-brewfile/_apis/build/status/l50.homebrew-brewfile?branchName=master)](https://dev.azure.com/jaysonegrace/homebrew-brewfile/_build/latest?definitionId=3&branchName=master)
-[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/l50/homebrew-brewfile/blob/master/LICENSE)
+[![Test Brewfile](https://github.com/l50/homebrew-brewfile/actions/workflows/test.yml/badge.svg)](https://github.com/l50/homebrew-brewfile/actions/workflows/test.yml)
+[![License](http://img.shields.io/:license-mit-blue.svg)](https://github.com/l50/homebrew-brewfile/blob/main/LICENSE)
 
 Used to install packages that I like to have on my Macs.
 
