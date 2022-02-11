@@ -47,6 +47,7 @@ cask "virtualbox"
 cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 brew "yamllint"
+cask "fig" # Terminal autocomplete
 
 # Pipenv and pyenv with dependencies
 brew "xz"
@@ -87,7 +88,7 @@ brew "spoof-mac" # MAC address spoofing
 brew "sqlmap"
 brew "nmap"
 brew "pdfgrep" # Useful for finding things in pdfs
-brew "wireshark"
+cask "wireshark"
 
 # Android security tools
 brew "apktool"
