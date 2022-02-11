@@ -79,7 +79,7 @@ cask "spotify"
 brew "amass" # Great recon tool
 cask "blockblock" # Monitor for persistent components
 brew "exiftool" # Interact with and manipulate metadata
-brew "exploitdb"
+#brew "exploitdb"
 brew "findomain" # Find new domains associated with a target
 cask "knockknock" # Notification when a persistent component is added
 cask "netiquette" # Network monitor
