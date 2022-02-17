@@ -40,6 +40,7 @@ brew "yq" # CLI tool to interact with YAML
 brew "mysql-client"
 #brew "node"
 cask "postman" # Useful for API testing
+brew "pre-commit"
 brew "tmux"
 cask "vagrant"
 brew "vim"
