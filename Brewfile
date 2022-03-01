@@ -72,7 +72,6 @@ cask "discord"
 cask "messenger"
 
 # Miscellaneous
-brew "lastpass-cli"
 cask "robo-3t" # Useful for mongo stuff
 cask "spotify"
 
@@ -82,6 +81,7 @@ cask "blockblock" # Monitor for persistent components
 brew "exiftool" # Interact with and manipulate metadata
 #brew "exploitdb"
 brew "findomain" # Find new domains associated with a target
+cask "keeper-password-manager" # Keeper Desktop Client
 cask "knockknock" # Notification when a persistent component is added
 cask "netiquette" # Network monitor
 # cask "oversight" # Notify when mic or webcam are activated
