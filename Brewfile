@@ -1,46 +1,74 @@
 tap "caffix/amass"
 tap "homebrew/bundle"
 
-# Nix utilities
-brew "aspell" # Check spelling
+### *nix Utilities ###
+# Check spelling programatically
+brew "aspell"
 brew "bash"
-brew "coreutils" # GNU
+# GNU coreutils
+brew "coreutils"
 brew "curl"
-brew "gnu-sed" # GNU
-brew "gnu-tar" # GNU
-brew "grep" # GNU
+# GNU sed
+brew "gnu-sed"
+# GNU tar
+brew "gnu-tar"
+# GNU grep
+brew "grep"
 brew "htop"
 brew "logrotate"
-brew "netcat" # GNU
-brew "p7zip" # 7z
-brew "shfmt" # linting for bash scripts
+# GNU netcat
+brew "netcat"
+# 7z
+brew "p7zip"
+# Linting for bash scripts
+brew "shfmt"
+# More linting for bash scripts
+brew "shellcheck"
 brew "tree"
-brew "watch" # Use instead of while true; do;
-brew "wget" # GNU
+# Alternative to while true; do;
+brew "watch"
+# GNU wget
+brew "wget"
 
-# Cloud stuff
+### AWS ###
 brew "awscli"
-brew "helm"
-cask "google-cloud-sdk"
 # Used by AWS to connect to instances w/o SSH key
 cask "session-manager-plugin"
+
+### Google Cloud ###
+cask "google-cloud-sdk"
+
+### Cloud Agnostic Utilities ###
 brew "packer"
 brew "terraform"
 brew "terragrunt"
 
-# Development tools and languages
-brew "ansible"
-cask "bloomrpc" # Tool for debugging GRPC
+### Containers ###
 cask "docker"
+brew "helm"
+
+### General Development Tools ###
+brew "ansible"
+# Tool for debugging GRPC
+cask "bloomrpc"
 brew "colordiff"
-cask "insomnia" # Alternative to postman
+# Alternative to postman
+cask "insomnia"
+cask "iterm2"
+# Terminal autocomplete
+cask "fig"
 brew "git"
-brew "jq" # CLI tool to interact with JSON
-brew "yq" # CLI tool to interact with YAML
+# CLI tool to interact with JSON
+brew "jq"
 brew "mysql-client"
-#brew "node"
-cask "postman" # Useful for API testing
+# Useful for API testing
+cask "postman"
 brew "pre-commit"
+# Keyboard shortcuts for modifying the screen layout
+cask "rectangle"
+# Useful for mongo stuff
+cask "robo-3t"
+cask "scroll-reverser"
 brew "tmux"
 cask "vagrant"
 brew "vim"
@@ -48,49 +76,60 @@ cask "virtualbox"
 cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 brew "yamllint"
-cask "fig" # Terminal autocomplete
+# CLI tool to interact with YAML
+brew "yq"
 
-# Pipenv and pyenv with dependencies
+### Android ###
+brew "apktool"
+# Dex to java decompiler - used for android security work
+brew "jadx"
+
+### JS Utilities ###
+# NodeJS - can cause problems, so it's disabled by default
+#brew "node"
+
+### Python ###
 brew "xz"
 brew "pyenv"
 brew "pipenv"
 
-# Productivity utilities
-cask "iterm2"
-cask "scroll-reverser"
-cask "rectangle" # Keyboard shortcuts for modifying the screen layout
-
-# Web browsers
+### Web Browsers ###
+cask "chromium"
 cask "firefox"
 cask "google-chrome"
-cask "chromium"
 
-# Chat apps
-cask "signal"
-cask "slack"
+### Chat Apps ###
 cask "discord"
 cask "messenger"
+cask "signal"
+cask "slack"
 
-# Miscellaneous
-cask "robo-3t" # Useful for mongo stuff
+### Entertainment ###
 cask "spotify"
 
-# Security tools
-brew "amass" # Great recon tool
-cask "blockblock" # Monitor for persistent components
-brew "exiftool" # Interact with and manipulate metadata
+### Security tools ###
+# Great recon tool
+brew "amass"
+# Monitor for persistent components
+cask "blockblock"
+# Interact with and manipulate metadata
+brew "exiftool"
+# Exploit DB CLI - causes a lot of issues with AV and EDR, so it's disabled by default
 #brew "exploitdb"
-brew "findomain" # Find new domains associated with a target
-cask "keeper-password-manager" # Keeper Desktop Client
-cask "knockknock" # Notification when a persistent component is added
-cask "netiquette" # Network monitor
-# cask "oversight" # Notify when mic or webcam are activated
-brew "spoof-mac" # MAC address spoofing
-brew "sqlmap"
+# Find new domains associated with a target
+brew "findomain"
+# Keeper Desktop Client
+cask "keeper-password-manager"
+# Notification when a persistent component is added
+cask "knockknock"
+# Useful for finding things in pdfs
+brew "pdfgrep"
+# Network monitor
+cask "netiquette"
 brew "nmap"
-brew "pdfgrep" # Useful for finding things in pdfs
+# Notify when mic or webcam are activated - can cause issues, so it's disabled by default
+# cask "oversight"
+# MAC address spoofing
+brew "spoof-mac"
+brew "sqlmap"
 cask "wireshark"
-
-# Android security tools
-brew "apktool"
-brew "jadx" # Dex to java decompiler - used for android security work
