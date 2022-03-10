@@ -41,7 +41,9 @@ cask "google-cloud-sdk"
 ### Cloud Agnostic Utilities ###
 brew "packer"
 brew "terraform"
+brew "terraform-docs"
 brew "terragrunt"
+brew "tflint"
 
 ### Containers ###
 cask "docker"
@@ -112,6 +114,8 @@ cask "spotify"
 brew "amass"
 # Monitor for persistent components
 cask "blockblock"
+# Static Code Analysis for IaC
+brew "checkov"
 # Interact with and manipulate metadata
 brew "exiftool"
 # Exploit DB CLI - causes a lot of issues with AV and EDR, so it's disabled by default
