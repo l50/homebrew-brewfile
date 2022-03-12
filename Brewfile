@@ -77,6 +77,8 @@ brew "vim"
 cask "virtualbox"
 cask "virtualbox-extension-pack"
 cask "visual-studio-code"
+# Install various versions of xcode
+brew "xcinfo"
 brew "yamllint"
 # CLI tool to interact with YAML
 brew "yq"
