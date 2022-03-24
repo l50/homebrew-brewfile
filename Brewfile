@@ -45,6 +45,11 @@ brew "terraform-docs"
 brew "terragrunt"
 brew "tflint"
 
+### Config Management ###
+brew "ansible"
+# Run tests for ansible
+brew "molecule"
+
 ### Containers ###
 cask "docker"
 brew "helm"
