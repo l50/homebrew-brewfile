@@ -53,6 +53,7 @@ brew "molecule"
 ### Containers ###
 cask "docker"
 brew "helm"
+brew "kubectl"
 
 ### General Development Tools ###
 brew "ansible"
