@@ -44,6 +44,7 @@ brew "terraform"
 brew "terraform-docs"
 brew "terragrunt"
 brew "tflint"
+brew "serverless"
 
 ### Config Management ###
 brew "ansible"
