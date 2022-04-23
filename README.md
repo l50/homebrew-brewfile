@@ -13,6 +13,9 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 Install dependencies from Brewfile:
 ```
 brew bundle
+
+# If you prefer verbose output:
+brew bundle -v
 ```
 
 ## Useful Resources
