@@ -23,7 +23,7 @@ on:
       debug_enabled:
         description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
         required: true
-        default: "true"
+        default: false
 
 jobs:
     test:
@@ -36,11 +36,18 @@ jobs:
         - name: Set up Homebrew
           uses: Homebrew/actions/setup-homebrew@master
 
-        - name: Removing existing aws components to avoid erroring out
+        - name: Removing existing components to avoid erroring out
           run: |
+            # For aws
             rm /usr/local/bin/aws
             rm /usr/local/bin/aws_completer
-
+            # For git
+            #rm -rf /usr/local/share/doc/git*
+            #rm -rf /usr/local/share/git*
+            # For go
+            rm /usr/local/bin/go
+            rm /usr/local/bin/gofmt
+            
         - name: Test Brewfile
           run: brew bundle
 

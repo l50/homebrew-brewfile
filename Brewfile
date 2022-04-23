@@ -66,7 +66,8 @@ cask "insomnia"
 cask "iterm2"
 # Terminal autocomplete
 cask "fig"
-brew "git"
+# Install git and symlink over the existing one
+#brew "git", link: true, conflicts_with: ["git"]
 # CLI tool to interact with JSON
 brew "jq"
 brew "mysql-client"
@@ -98,6 +99,10 @@ brew "jadx"
 ### JS Utilities ###
 # NodeJS - can cause problems, so it's disabled by default
 #brew "node"
+
+### Go ###
+# Install go and symlink over the existing one
+brew "go", link: true, conflicts_with: ["go"]
 
 ### Python ###
 brew "xz"
