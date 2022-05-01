@@ -2,10 +2,10 @@ tap "caffix/amass"
 tap "homebrew/bundle"
 
 ### *nix Utilities ###
-# Check spelling programatically
+# Check spelling programmatically
 brew "aspell"
 brew "bash"
-# GNU coreutils
+# GNU core utilities
 brew "coreutils"
 brew "curl"
 # GNU sed
@@ -70,6 +70,9 @@ cask "fig"
 #brew "git", link: true, conflicts_with: ["git"]
 # CLI tool to interact with JSON
 brew "jq"
+# CLI tool for the Mac App Store
+# https://github.com/mas-cli/mas
+brew "mas"
 brew "mysql-client"
 # Useful for API testing
 cask "postman"
@@ -85,19 +88,23 @@ brew "vim"
 cask "virtualbox"
 cask "virtualbox-extension-pack"
 cask "visual-studio-code"
-# Install various versions of xcode
+# Install different versions of xcode
 brew "xcinfo"
+# Used to run various GUI utilities
+cask "xquartz"
 brew "yamllint"
 # CLI tool to interact with YAML
 brew "yq"
 
 ### Android ###
 brew "apktool"
-# Dex to java decompiler - used for android security work
+# Dex to java decompiler - 
+# used for android security work
 brew "jadx"
 
 ### JS Utilities ###
-# NodeJS - can cause problems, so it's disabled by default
+# NodeJS - can cause problems, 
+# so it's disabled by default
 #brew "node"
 
 ### Go ###
@@ -116,7 +123,10 @@ cask "google-chrome"
 
 ### Chat Apps ###
 cask "discord"
-cask "messenger"
+# always upgrade auto-updated or unversioned 
+# messenger cask to latest version - 
+# even if already installed
+#cask "messenger", greedy: true
 cask "signal"
 cask "slack"
 
@@ -150,4 +160,12 @@ brew "nmap"
 # MAC address spoofing
 brew "spoof-mac"
 brew "sqlmap"
-cask "wireshark"
+brew "wireshark"
+
+### Mac App Store ###
+# Create GIFs from video files
+mas "CrunchyGIF", id: 1485165995
+# Fantastic decompression utility
+mas "The Unarchiver", id: 425424353
+# RDP client
+mas "Microsoft Remote Desktop", id: 1295203466
