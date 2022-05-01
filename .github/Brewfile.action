@@ -66,8 +66,6 @@ cask "insomnia"
 cask "iterm2"
 # Terminal autocomplete
 cask "fig"
-# Install git and symlink over the existing one
-brew "git", link: true, conflicts_with: ["git"]
 # CLI tool to interact with JSON
 brew "jq"
 # CLI tool for the Mac App Store
@@ -121,10 +119,6 @@ cask "google-chrome"
 
 ### Chat Apps ###
 cask "discord"
-# always upgrade auto-updated or unversioned 
-# messenger cask to latest version - 
-# even if already installed
-cask "messenger", greedy: true
 cask "signal"
 cask "slack"
 
@@ -159,11 +153,3 @@ brew "nmap"
 brew "spoof-mac"
 brew "sqlmap"
 brew "wireshark"
-
-### Mac App Store ###
-# Create GIFs from video files
-mas "CrunchyGIF", id: 1485165995
-# Fantastic decompression utility
-mas "The Unarchiver", id: 425424353
-# RDP client
-mas "Microsoft Remote Desktop", id: 1295203466
