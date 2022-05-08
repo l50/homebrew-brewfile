@@ -55,6 +55,9 @@ brew "molecule"
 cask "docker"
 brew "helm"
 brew "kubectl"
+# Lightweight utility to set up k3s
+# on any local or remote VM.
+brew "k3sup"
 
 ### General Development Tools ###
 brew "ansible"
