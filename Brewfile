@@ -162,6 +162,8 @@ brew "nmap"
 brew "spoof-mac"
 brew "sqlmap"
 brew "wireshark"
+# One of the best static code analysis tools out there
+brew "semgrep"
 
 ### Mac App Store ###
 # Create GIFs from video files
