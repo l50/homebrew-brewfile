@@ -112,6 +112,9 @@ brew "node", link: true, conflicts_with: ["node"]
 # Install go and symlink over the existing one
 brew "go", link: true, conflicts_with: ["go"]
 
+### Powershell ###
+cask "powershell-preview"
+
 ### Python ###
 brew "xz"
 brew "pyenv"
