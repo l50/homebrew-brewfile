@@ -20,10 +20,7 @@ brew "logrotate"
 brew "netcat"
 # 7z
 brew "p7zip"
-# Linting for bash scripts
-brew "shfmt"
-# More linting for bash scripts
-brew "shellcheck"
+# Useful utility for file exploration
 brew "tree"
 # Alternative to while true; do;
 brew "watch"
@@ -105,7 +102,12 @@ brew "apktool"
 # used for android security work
 brew "jadx"
 
-### JS Utilities ###
+### Bash ###
+# Linting and pre-commit hooks
+brew "shfmt"
+brew "shellcheck"
+
+### JS  ###
 brew "node", link: true, conflicts_with: ["node"]
 
 ### Go ###
@@ -119,6 +121,9 @@ cask "powershell-preview"
 brew "xz"
 brew "pyenv"
 brew "pipenv"
+# Linting and pre-commit hooks
+brew "black"
+brew "pylint"
 
 ### Web Browsers ###
 cask "chromium"
