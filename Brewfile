@@ -66,6 +66,8 @@ cask "insomnia"
 cask "iterm2"
 # Terminal autocomplete
 cask "fig"
+# GitHub CLI 
+brew "gh"
 # Install git and symlink over the existing one
 brew "git", link: true, conflicts_with: ["git"]
 # CLI tool to interact with JSON
