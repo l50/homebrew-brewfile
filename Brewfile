@@ -68,10 +68,9 @@ cask "insomnia"
 cask "iterm2"
 # Terminal autocomplete
 cask "fig"
-# GitHub CLI 
+# GitHub CLI
 brew "gh"
-# Install git and symlink over the existing one
-brew "git", link: true, conflicts_with: ["git"]
+brew "git"
 # CLI tool to interact with JSON
 brew "jq"
 # CLI tool for the Mac App Store
@@ -102,7 +101,7 @@ brew "yq"
 
 ### Android ###
 brew "apktool"
-# Dex to java decompiler - 
+# Dex to java decompiler -
 # used for android security work
 brew "jadx"
 
@@ -136,8 +135,8 @@ cask "google-chrome"
 
 ### Chat Apps ###
 cask "discord"
-# always upgrade auto-updated or unversioned 
-# messenger cask to latest version - 
+# always upgrade auto-updated or unversioned
+# messenger cask to latest version -
 # even if already installed
 cask "messenger", greedy: true
 cask "signal"

@@ -546,9 +546,7 @@
         },
         "options": {
           "link": true,
-          "conflicts_with": [
-            "go"
-          ]
+          "conflicts_with": ["go"]
         }
       },
       "tmux": {
@@ -914,9 +912,7 @@
         },
         "options": {
           "link": true,
-          "conflicts_with": [
-            "python@2"
-          ]
+          "conflicts_with": ["python@2"]
         }
       },
       "macvim": {
@@ -1083,9 +1079,7 @@
         },
         "options": {
           "link": true,
-          "conflicts_with": [
-            "node"
-          ]
+          "conflicts_with": ["node"]
         }
       },
       "exploitdb": {
@@ -1259,9 +1253,7 @@
         },
         "options": {
           "link": true,
-          "conflicts_with": [
-            "git"
-          ]
+          "conflicts_with": ["git"]
         }
       },
       "jq": {

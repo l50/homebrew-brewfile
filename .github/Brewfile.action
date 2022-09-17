@@ -99,7 +99,7 @@ brew "yq"
 
 ### Android ###
 brew "apktool"
-# Dex to java decompiler - 
+# Dex to java decompiler -
 # used for android security work
 brew "jadx"
 

@@ -7,7 +7,7 @@ on:
 
   # Run once a week (see https://crontab.guru)
   schedule:
-    - cron: '0 0 * * 0'
+    - cron: "0 0 * * 0"
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -21,40 +21,35 @@ on:
         required: true
         default: jayson.e.grace@gmail.com
       debug_enabled:
-        description: 'Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)'
+        description: "Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)"
         required: true
         default: false
 
 jobs:
-    test:
-      name: Build and configure the Brewfile test environment
-      runs-on: macos-latest
-      steps:
-        - name: Set up git repository
-          uses: actions/checkout@v2
+  test:
+    name: Build and configure the Brewfile test environment
+    runs-on: macos-latest
+    steps:
+      - name: Set up git repository
+        uses: actions/checkout@v2
 
-        - name: Set up Homebrew
-          uses: Homebrew/actions/setup-homebrew@master
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
 
-        - name: Remove disabled forumulae
-          uses: Homebrew/actions/remove-disabled-formulae@master
+      - name: Remove disabled forumulae
+        uses: Homebrew/actions/remove-disabled-formulae@master
 
-        - name: Removing existing components to avoid errors
-          run: |
-            # For aws
-            rm /usr/local/bin/aws
-            rm /usr/local/bin/aws_completer
-            # For go
-            rm /usr/local/bin/go
-            rm /usr/local/bin/gofmt
-            
-        - name: Set up Brewfile that works with github actions
-          run: mv .github/Brewfile.action ./Brewfile
+      - name: Removing existing components to avoid errors
+        run: |
+          # For aws
+          rm /usr/local/bin/aws
+          rm /usr/local/bin/aws_completer
+          # For go
+          rm /usr/local/bin/go
+          rm /usr/local/bin/gofmt
 
-        - name: Test Brewfile
-          run: brew bundle
+      - name: Set up Brewfile that works with github actions
+        run: mv .github/Brewfile.action ./Brewfile
 
-        # - name: Setup tmate session if any part of the action fails
-        #   if: ${{ failure() }}
-        #   uses: mxschmitt/action-tmate@v3
-        
+      - name: Test Brewfile
+        run: brew bundle
