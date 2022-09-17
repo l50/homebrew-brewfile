@@ -36,6 +36,9 @@ jobs:
         - name: Set up Homebrew
           uses: Homebrew/actions/setup-homebrew@master
 
+        - name: Remove disabled forumulae
+          uses: Homebrew/actions/remove-disabled-formulae@master
+
         - name: Removing existing components to avoid errors
           run: |
             # For aws
