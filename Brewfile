@@ -58,6 +58,8 @@ brew "k3sup"
 
 ### General Development Tools ###
 brew "ansible"
+# Additional functionality for managing brew via Brewfile
+brew "rcmdnk/file/brew-file"
 # Tool for debugging GRPC
 cask "bloomrpc"
 brew "colordiff"
