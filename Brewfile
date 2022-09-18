@@ -1,4 +1,4 @@
-tap "caffix/amass"
+tap 'homebrew/core'
 tap "homebrew/bundle"
 
 ### *nix Utilities ###
@@ -20,6 +20,10 @@ brew "logrotate"
 brew "netcat"
 # 7z
 brew "p7zip"
+# Linting for bash scripts
+brew "shfmt"
+# More linting for bash scripts
+brew "shellcheck"
 # Useful utility for file exploration
 brew "tree"
 # Alternative to while true; do;
@@ -45,7 +49,7 @@ brew "serverless"
 
 ### Config Management ###
 brew "ansible"
-# Run tests for ansible
+# Used to create and run tests for ansible
 brew "molecule"
 
 ### Containers ###
@@ -57,9 +61,9 @@ brew "kubectl"
 brew "k3sup"
 
 ### General Development Tools ###
-brew "ansible"
 # Additional functionality for managing brew via Brewfile
-brew "rcmdnk/file/brew-file"
+tap 'rcmdnk/file'
+brew "brew-file"
 # Tool for debugging GRPC
 cask "bloomrpc"
 brew "colordiff"
@@ -111,11 +115,10 @@ brew "shfmt"
 brew "shellcheck"
 
 ### JS  ###
-brew "node", link: true, conflicts_with: ["node"]
+brew "node"
 
 ### Go ###
-# Install go and symlink over the existing one
-brew "go", link: true, conflicts_with: ["go"]
+brew "go"
 
 ### Python ###
 brew "xz"
@@ -144,6 +147,7 @@ cask "spotify"
 
 ### Security tools ###
 # Great recon tool
+tap "caffix/amass"
 brew "amass"
 # Monitor for persistent components
 cask "blockblock"

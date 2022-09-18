@@ -14,6 +14,9 @@ on:
 
 env:
   HOMEBREW_BREWFILE: ${{ github.workspace }}/Brewfile
+  HOMEBREW_BUNDLE_MAS_SKIP: true
+  HOMEBREW_BUNDLE_WHALEBREW_SKIP: true
+  HOMEBREW_NO_INSTALL_CLEANUP: true
 
 jobs:
   auto-update:
@@ -23,11 +26,6 @@ jobs:
       - name: Set up git repository
         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-      
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
@@ -44,8 +42,8 @@ jobs:
 
       - name: Install Homebrew-file
         run: brew install rcmdnk/file/brew-file
-      
-      - name: Removing existing components to avoid errors
+
+      - name: Remove problematic pre-installed artifacts
         run: |
           # For aws
           rm /usr/local/bin/aws
@@ -56,9 +54,8 @@ jobs:
 
       - name: Install, update, and run pre-commit hooks
         run: |
-          pip3 install pre-commit
+          brew install pre-commit
           pre-commit autoupdate
-          pre-commit run --all-files
 
       - name: Create Pull Request with updates
         uses: peter-evans/create-pull-request@v4
