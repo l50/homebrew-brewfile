@@ -1,4 +1,4 @@
-tap "caffix/amass"
+tap 'homebrew/core'
 tap "homebrew/bundle"
 
 ### *nix Utilities ###
@@ -24,6 +24,7 @@ brew "p7zip"
 brew "shfmt"
 # More linting for bash scripts
 brew "shellcheck"
+# Useful utility for file exploration
 brew "tree"
 # Alternative to while true; do;
 brew "watch"
@@ -48,7 +49,7 @@ brew "serverless"
 
 ### Config Management ###
 brew "ansible"
-# Run tests for ansible
+# Used to create and run tests for ansible
 brew "molecule"
 
 ### Containers ###
@@ -60,7 +61,9 @@ brew "kubectl"
 brew "k3sup"
 
 ### General Development Tools ###
-brew "ansible"
+# Additional functionality for managing brew via Brewfile
+tap 'rcmdnk/file'
+brew "brew-file"
 # Tool for debugging GRPC
 cask "bloomrpc"
 brew "colordiff"
@@ -69,6 +72,9 @@ cask "insomnia"
 cask "iterm2"
 # Terminal autocomplete
 cask "fig"
+# GitHub CLI
+brew "gh"
+brew "git"
 # CLI tool to interact with JSON
 brew "jq"
 # CLI tool for the Mac App Store
@@ -103,17 +109,24 @@ brew "apktool"
 # used for android security work
 brew "jadx"
 
-### JS Utilities ###
-brew "node", link: true, conflicts_with: ["node"]
+### Bash ###
+# Linting and pre-commit hooks
+brew "shfmt"
+brew "shellcheck"
+
+### JS  ###
+brew "node"
 
 ### Go ###
-# Install go and symlink over the existing one
-brew "go", link: true, conflicts_with: ["go"]
+brew "go"
 
 ### Python ###
 brew "xz"
 brew "pyenv"
 brew "pipenv"
+# Linting and pre-commit hooks
+brew "black"
+brew "pylint"
 
 ### Web Browsers ###
 cask "chromium"
@@ -122,6 +135,10 @@ cask "google-chrome"
 
 ### Chat Apps ###
 cask "discord"
+# always upgrade auto-updated or unversioned
+# messenger cask to latest version -
+# even if already installed
+cask "messenger", greedy: true
 cask "signal"
 cask "slack"
 
@@ -130,6 +147,7 @@ cask "spotify"
 
 ### Security tools ###
 # Great recon tool
+tap "caffix/amass"
 brew "amass"
 # Monitor for persistent components
 cask "blockblock"
@@ -156,3 +174,5 @@ brew "nmap"
 brew "spoof-mac"
 brew "sqlmap"
 brew "wireshark"
+# One of the best static code analysis tools out there
+brew "semgrep"

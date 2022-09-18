@@ -1,4 +1,4 @@
 #!/bin/bash
 set -ex
 
-brew file update
+brew file update -V 2 --appstore 0

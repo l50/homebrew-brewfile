@@ -23,7 +23,13 @@ on:
       debug_enabled:
         description: "Run the build with tmate debugging enabled (https://github.com/marketplace/actions/debugging-with-tmate)"
         required: true
-        default: false
+        default: "false"
+
+env:
+  HOMEBREW_BREWFILE: ${{ github.workspace }}/Brewfile
+  HOMEBREW_BUNDLE_MAS_SKIP: true
+  HOMEBREW_BUNDLE_WHALEBREW_SKIP: true
+  HOMEBREW_NO_INSTALL_CLEANUP: true
 
 jobs:
   test:
@@ -39,8 +45,9 @@ jobs:
       - name: Remove disabled forumulae
         uses: Homebrew/actions/remove-disabled-formulae@master
 
-      - name: Removing existing components to avoid errors
+      - name: Setup action Brewfile and removing problematic pre-installed artifacts
         run: |
+          mv .github/Brewfile.action ./Brewfile
           # For aws
           rm /usr/local/bin/aws
           rm /usr/local/bin/aws_completer
@@ -48,8 +55,5 @@ jobs:
           rm /usr/local/bin/go
           rm /usr/local/bin/gofmt
 
-      - name: Set up Brewfile that works with github actions
-        run: mv .github/Brewfile.action ./Brewfile
-
       - name: Test Brewfile
-        run: brew bundle
+        run: brew bundle -v
