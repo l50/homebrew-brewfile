@@ -176,11 +176,3 @@ brew "sqlmap"
 brew "wireshark"
 # One of the best static code analysis tools out there
 brew "semgrep"
-
-### Mac App Store ###
-# Create GIFs from video files
-mas "CrunchyGIF", id: 1485165995
-# Fantastic decompression utility
-mas "The Unarchiver", id: 425424353
-# RDP client
-mas "Microsoft Remote Desktop", id: 1295203466
