@@ -27,6 +27,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.10"
+      
+      - name: Set up Homebrew
+        uses: Homebrew/actions/setup-homebrew@master
 
       - name: Set up Go
         uses: actions/setup-go@v3
@@ -41,6 +44,15 @@ jobs:
 
       - name: Install Homebrew-file
         run: brew install rcmdnk/file/brew-file
+      
+      - name: Removing existing components to avoid errors
+        run: |
+          # For aws
+          rm /usr/local/bin/aws
+          rm /usr/local/bin/aws_completer
+          # For go
+          rm /usr/local/bin/go
+          rm /usr/local/bin/gofmt
 
       - name: Install, update, and run pre-commit hooks
         run: |
