@@ -55,10 +55,12 @@ brew "molecule"
 ### Containers ###
 cask "docker"
 brew "helm"
-brew "kubectl"
 # Lightweight utility to set up k3s
 # on any local or remote VM.
 brew "k3sup"
+brew "kubectl"
+# Create k8s test environments
+brew "kind"
 
 ### General Development Tools ###
 # Additional functionality for managing brew via Brewfile

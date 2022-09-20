@@ -8,13 +8,25 @@ Used to install packages that I like to have on my Macs.
 
 ## Setup
 
-Install homebrew:
+- Install homebrew:
 
 ```bash
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-Install dependencies from Brewfile:
+- Setup with Homebrew-file:
+
+```bash
+# From the root of the cloned repo
+if [[ ! -d "${HOME}/.brewfile" ]]; then
+  mkdir ~/.brewfile
+fi
+cp Brewfile ~/.brewfile/Brewfile
+```
+
+## Usage
+
+- Install dependencies from Brewfile:
 
 ```bash
 brew bundle
@@ -23,10 +35,22 @@ brew bundle
 brew bundle -v
 ```
 
-Install pre-commit hooks:
+- Update all brew packages manually:
+
+```bash
+brew file update
+```
+
+- Install pre-commit hooks:
 
 ```bash
 pre-commit install
+```
+
+- Run pre-commit hooks manually:
+
+```bash
+pre-commit run --all-files
 ```
 
 ## Useful Resources
