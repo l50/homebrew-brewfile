@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 # Check spelling programmatically
 brew "aspell"
 brew "bash"
+brew "bash-completion"
 # GNU core utilities
 brew "coreutils"
 brew "curl"
