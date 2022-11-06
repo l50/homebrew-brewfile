@@ -124,8 +124,6 @@ brew "go"
 brew "xz"
 brew "pyenv"
 brew "pipenv"
-# Linting and pre-commit hooks
-brew "black"
 brew "pylint"
 
 ### Web Browsers ###

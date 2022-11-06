@@ -39,22 +39,18 @@ jobs:
       - name: Set up git repository
         uses: actions/checkout@v3.1.0
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.10"
-
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Install pre-commit
-        run: brew install pre-commit
+      - name: Install brew dependencies
+        run: brew install shellcheck rcmdnk/file/brew-file pre-commit
 
       - name: Remove disabled forumulae
         uses: Homebrew/actions/remove-disabled-formulae@master
 
       - name: Setup action Brewfile and removing problematic pre-installed artifacts
         run: |
+          mv .github/Brewfile.action ./Brewfile
           # For black
           rm /usr/local/bin/2to3-3.11
           # For aws
@@ -64,13 +60,13 @@ jobs:
           rm /usr/local/bin/go
           rm /usr/local/bin/gofmt
 
-      - name: Setup tmate session
-        if: ${{ failure() }}
-        # Only allow access using your registered public keys
-        # in github
-        with:
-          limit-access-to-actor: true
-        uses: mxschmitt/action-tmate@v3
+      # - name: Setup tmate session
+      #   if: ${{ failure() }}
+      #   # Only allow access using your registered public keys
+      #   # in github
+      #   with:
+      #     limit-access-to-actor: true
+      #   uses: mxschmitt/action-tmate@v3
 
       - name: Test Brewfile
         run: brew bundle -v

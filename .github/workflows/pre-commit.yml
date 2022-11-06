@@ -37,15 +37,15 @@ jobs:
       - name: Install shfmt
         run: go install mvdan.cc/sh/v3/cmd/shfmt@latest
 
-      - name: Install shellcheck
-        run: brew install shellcheck
+      - name: Install brew dependencies
+        run: brew install shellcheck rcmdnk/file/brew-file pre-commit
 
-      - name: Install Homebrew-file and pre-commit
-        run: |
-          brew install rcmdnk/file/brew-file pre-commit
+      - name: Remove disabled forumulae
+        uses: Homebrew/actions/remove-disabled-formulae@master
 
-      - name: Remove problematic pre-installed artifacts
+      - name: Setup action Brewfile and removing problematic pre-installed artifacts
         run: |
+          mv .github/Brewfile.action ./Brewfile
           # For black
           rm /usr/local/bin/2to3-3.11
           # For aws
@@ -62,6 +62,7 @@ jobs:
         uses: peter-evans/create-pull-request@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          base: main
           branch: update/pre-commit-hooks
           title: Update pre-commit hooks
           commit-message: "chore: update pre-commit hooks"
