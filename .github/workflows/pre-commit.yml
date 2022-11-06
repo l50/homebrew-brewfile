@@ -40,11 +40,14 @@ jobs:
       - name: Install shellcheck
         run: brew install shellcheck
 
-      - name: Install Homebrew-file
-        run: brew install rcmdnk/file/brew-file
+      - name: Install Homebrew-file and pre-commit
+        run: |
+          brew install rcmdnk/file/brew-file pre-commit
 
       - name: Remove problematic pre-installed artifacts
         run: |
+          # For black
+          rm /usr/local/bin/2to3-3.11
           # For aws
           rm /usr/local/bin/aws
           rm /usr/local/bin/aws_completer
@@ -52,10 +55,8 @@ jobs:
           rm /usr/local/bin/go
           rm /usr/local/bin/gofmt
 
-      - name: Install, update, and run pre-commit hooks
-        run: |
-          brew install pre-commit
-          pre-commit autoupdate
+      - name: Run pre-commit autoupdate action
+        uses: browniebroke/pre-commit-autoupdate-action@main
 
       - name: Create Pull Request with updates
         uses: peter-evans/create-pull-request@v4

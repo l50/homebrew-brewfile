@@ -47,13 +47,8 @@ jobs:
       - name: Set up Homebrew
         uses: Homebrew/actions/setup-homebrew@master
 
-      - name: Setup tmate session
-        if: ${{ failure() }}
-        # Only allow access using your registered public keys
-        # in github
-        with:
-          limit-access-to-actor: true
-        uses: mxschmitt/action-tmate@v3
+      - name: Install pre-commit
+        run: brew install pre-commit
 
       - name: Remove disabled forumulae
         uses: Homebrew/actions/remove-disabled-formulae@master
@@ -68,6 +63,14 @@ jobs:
           # For go
           rm /usr/local/bin/go
           rm /usr/local/bin/gofmt
+
+      - name: Setup tmate session
+        if: ${{ failure() }}
+        # Only allow access using your registered public keys
+        # in github
+        with:
+          limit-access-to-actor: true
+        uses: mxschmitt/action-tmate@v3
 
       - name: Test Brewfile
         run: brew bundle -v
