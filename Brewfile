@@ -66,6 +66,8 @@ brew "kind"
 ### General Development Tools ###
 # Additional functionality for managing brew via Brewfile
 tap 'rcmdnk/file'
+# Test github actions locally
+brew "act"
 brew "brew-file"
 # Tool for debugging GRPC
 cask "bloomrpc"
