@@ -124,7 +124,6 @@ brew "go"
 brew "xz"
 brew "pyenv"
 brew "pipenv"
-brew "pylint"
 
 ### Web Browsers ###
 cask "chromium"
