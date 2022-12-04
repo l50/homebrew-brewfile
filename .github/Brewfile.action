@@ -5,6 +5,7 @@ tap "homebrew/bundle"
 # Check spelling programmatically
 brew "aspell"
 brew "bash"
+brew "bash-completion"
 # GNU core utilities
 brew "coreutils"
 brew "curl"
@@ -55,14 +56,18 @@ brew "molecule"
 ### Containers ###
 cask "docker"
 brew "helm"
-brew "kubectl"
 # Lightweight utility to set up k3s
 # on any local or remote VM.
 brew "k3sup"
+brew "kubectl"
+# Create k8s test environments
+brew "kind"
 
 ### General Development Tools ###
 # Additional functionality for managing brew via Brewfile
 tap 'rcmdnk/file'
+# Test github actions locally
+brew "act"
 brew "brew-file"
 # Tool for debugging GRPC
 cask "bloomrpc"
@@ -92,8 +97,6 @@ cask "scroll-reverser"
 brew "tmux"
 cask "vagrant"
 brew "vim"
-cask "virtualbox"
-cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 # Install different versions of xcode
 brew "xcinfo"
@@ -124,6 +127,9 @@ brew "go"
 brew "xz"
 brew "pyenv"
 brew "pipenv"
+# Linting and pre-commit hooks
+brew "black"
+brew "pylint"
 
 ### Web Browsers ###
 cask "chromium"
@@ -132,10 +138,6 @@ cask "google-chrome"
 
 ### Chat Apps ###
 cask "discord"
-# always upgrade auto-updated or unversioned
-# messenger cask to latest version -
-# even if already installed
-cask "messenger", greedy: true
 cask "signal"
 cask "slack"
 

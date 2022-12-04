@@ -97,8 +97,6 @@ cask "scroll-reverser"
 brew "tmux"
 cask "vagrant"
 brew "vim"
-#cask "virtualbox"
-#cask "virtualbox-extension-pack"
 cask "visual-studio-code"
 # Install different versions of xcode
 brew "xcinfo"
@@ -140,10 +138,6 @@ cask "google-chrome"
 
 ### Chat Apps ###
 cask "discord"
-# always upgrade auto-updated or unversioned
-# messenger cask to latest version -
-# even if already installed
-cask "messenger", greedy: true
 cask "signal"
 cask "slack"
 
@@ -181,11 +175,3 @@ brew "sqlmap"
 brew "wireshark"
 # One of the best static code analysis tools out there
 brew "semgrep"
-
-### Mac App Store ###
-# Create GIFs from video files
-# mas "CrunchyGIF", id: 1485165995
-# Fantastic decompression utility
-# mas "The Unarchiver", id: 425424353
-# RDP client
-# mas "Microsoft Remote Desktop", id: 1295203466
