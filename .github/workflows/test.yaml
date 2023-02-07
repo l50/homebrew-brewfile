@@ -48,9 +48,8 @@ jobs:
       - name: Remove disabled forumulae
         uses: Homebrew/actions/remove-disabled-formulae@master
 
-      - name: Setup action Brewfile and removing problematic pre-installed artifacts
+      - name: Remove problematic pre-installed artifacts
         run: |
-          mv .github/Brewfile.action ./Brewfile
           # For black
           rm /usr/local/bin/2to3-3.11
           # For aws

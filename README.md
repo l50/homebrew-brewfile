@@ -1,7 +1,6 @@
 # homebrew-brewfile
 
 [![Test Brewfile](https://github.com/l50/homebrew-brewfile/actions/workflows/test.yaml/badge.svg)](https://github.com/l50/homebrew-brewfile/actions/workflows/test.yaml)
-[![Pre-commit](https://github.com/l50/homebrew-brewfile/actions/workflows/pre-commit.yaml/badge.svg)](https://github.com/l50/homebrew-brewfile/actions/workflows/pre-commit.yaml)
 [![License](https://img.shields.io/github/license/l50/homebrew-brewfile?label=License&style=flat&color=blue&logo=github)](https://github.com/l50/homebrew-brewfile/blob/main/LICENSE)
 
 Used to install packages that I like to have on my Macs.
