@@ -148,8 +148,6 @@ cask "spotify"
 # Great recon tool
 tap "caffix/amass"
 brew "amass"
-# Monitor for persistent components
-cask "blockblock"
 # Static Code Analysis for IaC
 brew "checkov"
 # Interact with and manipulate metadata
