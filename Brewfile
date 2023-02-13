@@ -60,6 +60,8 @@ brew "helm"
 # on any local or remote VM.
 brew "k3sup"
 brew "kubectl"
+# Template-free customization of Kubernetes YAML manifests
+brew "kustomize"
 # Create k8s test environments
 brew "kind"
 
