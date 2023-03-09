@@ -30,12 +30,16 @@ softwareupdate --install-rosetta --agree-to-license
 - Setup with Homebrew-file:
 
 ```bash
+brew tap rcmdnk/file
+brew install brew-file
 # From the root of the cloned repo
 if [[ ! -d "${HOME}/.brewfile" ]]; then
   mkdir ~/.brewfile
 fi
 cp Brewfile ~/.brewfile/Brewfile
 ```
+
+---
 
 ## Usage
 
@@ -65,6 +69,8 @@ pre-commit install
 ```bash
 pre-commit run --all-files
 ```
+
+---
 
 ## Useful Resources
 

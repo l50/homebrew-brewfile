@@ -121,11 +121,11 @@ brew "jadx"
 brew "shfmt"
 brew "shellcheck"
 
-### JS  ###
-brew "node"
-
 ### Go ###
 brew "go"
+
+### JS  ###
+brew "node"
 
 ### Python ###
 brew "xz"
@@ -134,6 +134,9 @@ brew "pipenv"
 # Linting and pre-commit hooks
 brew "black"
 brew "pylint"
+
+### Ruby ###
+brew "ruby"
 
 ### Web Browsers ###
 cask "chromium"
@@ -160,6 +163,7 @@ brew "exiftool"
 #brew "exploitdb"
 # Find new domains associated with a target
 brew "findomain"
+brew "gpg"
 # Keeper Desktop Client
 cask "keeper-password-manager"
 # Notification when a persistent component is added
