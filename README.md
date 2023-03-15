@@ -19,6 +19,11 @@ ARM-based CPU:
 
 ```bash
 arch -x86_64 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
+# Consider adding this to your dotfiles:
+if [[ $(uname -a | grep -i arm) ]]; then
+  alias brew='arch -x86_64 brew'
+fi
 ```
 
 - Install Rosetta if you're on an ARM-based mac:
