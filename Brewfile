@@ -9,6 +9,8 @@ brew "bash-completion"
 # GNU core utilities
 brew "coreutils"
 brew "curl"
+# Command-line fuzzy finder
+brew "fzf"
 # GNU sed
 brew "gnu-sed"
 # GNU tar
