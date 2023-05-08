@@ -74,6 +74,8 @@ brew "kind"
 tap 'rcmdnk/file'
 # Test github actions locally
 brew "act"
+# Substantially better alternative to spotlight
+cask "alfred"
 brew "brew-file"
 # Tool for debugging GRPC
 cask "bloomrpc"
@@ -180,6 +182,9 @@ brew "nmap"
 # MAC address spoofing
 brew "spoof-mac"
 brew "sqlmap"
-brew "wireshark"
+cask "wireshark"
+# If your list of available capture interfaces is empty
+# (default macOS behavior), install ChmodBPF
+cask "wireshark-chmodbpf"
 # One of the best static code analysis tools out there
 brew "semgrep"
