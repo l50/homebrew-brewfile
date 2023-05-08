@@ -1,6 +1,13 @@
 tap 'homebrew/core'
 tap "homebrew/bundle"
 
+### AWS ###
+brew "awscli"
+# Used by AWS to connect to instances w/o SSH key
+cask "session-manager-plugin"
+
+### Google Cloud ###
+cask "google-cloud-sdk"
 ### *nix Utilities ###
 # Check spelling programmatically
 brew "aspell"
@@ -33,14 +40,6 @@ brew "tree"
 brew "watch"
 # GNU wget
 brew "wget"
-
-### AWS ###
-brew "awscli"
-# Used by AWS to connect to instances w/o SSH key
-cask "session-manager-plugin"
-
-### Google Cloud ###
-cask "google-cloud-sdk"
 
 ### Cloud Agnostic Utilities ###
 brew "packer"
@@ -185,6 +184,5 @@ brew "sqlmap"
 cask "wireshark"
 # If your list of available capture interfaces is empty
 # (default macOS behavior), install ChmodBPF
-cask "wireshark-chmodbpf"
 # One of the best static code analysis tools out there
 brew "semgrep"
