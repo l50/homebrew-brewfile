@@ -77,6 +77,12 @@ pre-commit run --all-files
 
 ---
 
+## Debugging
+
+If you're having trouble, please refer to the [debugging doc](docs/debugging.md).
+
+---
+
 ## Useful Resources
 
 - <https://thoughtbot.com/blog/brewfile-a-gemfile-but-for-homebrew>
