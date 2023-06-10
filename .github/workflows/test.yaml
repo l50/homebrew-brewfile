@@ -1,6 +1,7 @@
 ---
-name: Test Brewfile
+name: Tests
 on:
+  pull_request:
   push:
     branches:
       - main
@@ -43,7 +44,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Install brew dependencies
-        run: brew install shellcheck rcmdnk/file/brew-file pre-commit
+        run: brew install shellcheck rcmdnk/file/brew-file pre-commit bats-core
 
       - name: Remove disabled forumulae
         uses: Homebrew/actions/remove-disabled-formulae@master
@@ -59,13 +60,8 @@ jobs:
           rm /usr/local/bin/go
           rm /usr/local/bin/gofmt
 
-      # - name: Setup tmate session
-      #   if: ${{ failure() }}
-      #   # Only allow access using your registered public keys
-      #   # in github
-      #   with:
-      #     limit-access-to-actor: true
-      #   uses: mxschmitt/action-tmate@v3
-
       - name: Test Brewfile
         run: brew bundle -v
+
+      - name: Run Bats tests
+        run: bats tests/brew_upgrade_tests.bats

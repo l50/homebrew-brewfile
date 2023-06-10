@@ -14,7 +14,7 @@ repos:
     rev: v1.28.0
     hooks:
       - id: yamllint
-        entry: yamllint --strict -c .hooks/linters/.yaml-lint.yaml
+        entry: yamllint --strict -c .hooks/linters/yamllint.yaml
 
   - repo: https://github.com/pre-commit/mirrors-prettier
     rev: v3.0.0-alpha.4
@@ -28,6 +28,7 @@ repos:
       - id: script-must-have-extension
         name: Ensure shell scripts end with .sh
         types: [shell]
+        exclude: .bats
       - id: shellcheck
       - id: shfmt
       # Configuration in .mdlrc and .hooks/linters/mdstyle.rb
@@ -44,4 +45,8 @@ repos:
       - id: brewfile-update
         name: Update Brewfile
         entry: .hooks/update-brewfile.sh
+        language: script
+      - id: run-bats-tests
+        name: Run BATS tests
+        entry: .hooks/run-bats-tests.sh
         language: script
