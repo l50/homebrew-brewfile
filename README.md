@@ -60,7 +60,7 @@ brew bundle -v
 - Update all brew packages manually:
 
 ```bash
-brew file update
+brew file update --verbose 5
 ```
 
 - Install pre-commit hooks:

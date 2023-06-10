@@ -34,6 +34,8 @@ brew "p7zip"
 brew "shfmt"
 # More linting for bash scripts
 brew "shellcheck"
+# For testing bash scripts
+brew "bats-core"
 # Useful utility for file exploration
 brew "tree"
 # Alternative to while true; do;
