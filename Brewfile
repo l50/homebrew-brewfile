@@ -186,3 +186,5 @@ cask "wireshark"
 # (default macOS behavior), install ChmodBPF
 # One of the best static code analysis tools out there
 brew "semgrep"
+# Version manager that can handle multiple languages
+brew "asdf"
