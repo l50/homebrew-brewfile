@@ -67,7 +67,7 @@ jobs:
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3.1.0
-      
+
       - name: Remove problematic pre-installed artifacts
         run: |
           # For black

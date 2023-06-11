@@ -2,12 +2,15 @@ tap 'homebrew/core'
 tap "homebrew/bundle"
 
 ### AWS ###
+# CLI tool to interact with AWS services
 brew "awscli"
-# Used by AWS to connect to instances w/o SSH key
+# Used by AWS to connect to instances without SSH key
 cask "session-manager-plugin"
 
 ### Google Cloud ###
+# Google Cloud SDK provides tools for interacting with Google Cloud services
 cask "google-cloud-sdk"
+
 ### *nix Utilities ###
 # Check spelling programmatically
 brew "aspell"
@@ -20,10 +23,17 @@ brew "curl"
 brew "fzf"
 # GNU sed
 brew "gnu-sed"
-# GNU tar
+# GNU tar: Free software for archiving
 brew "gnu-tar"
-# GNU grep
+# GNU grep: Free software for text search
 brew "grep"
+# logrotate: Simplifies the administration of multiple log files
+brew "logrotate"
+# GNU netcat: networking utility for reading from and writing to network connections
+brew "netcat"
+# 7z: File archiver with high compression ratio
+brew "p7zip"
+# htop: An interactive process viewer for Unix
 brew "htop"
 brew "logrotate"
 # GNU netcat
@@ -44,6 +54,7 @@ brew "watch"
 brew "wget"
 
 ### Cloud Agnostic Utilities ###
+# These tools are used to build, change, and version infrastructure efficiently and safely across multiple providers
 brew "packer"
 brew "terraform"
 brew "terraform-docs"
@@ -52,11 +63,13 @@ brew "tflint"
 brew "serverless"
 
 ### Config Management ###
+# Ansible: Provides enterprise-level solutions for IT automation
 brew "ansible"
 # Used to create and run tests for ansible
 brew "molecule"
 
 ### Containers ###
+# Docker: Enables developers to build and share applications through containers
 cask "docker"
 brew "helm"
 # Lightweight utility to set up k3s
@@ -75,14 +88,17 @@ brew "kind"
 tap 'rcmdnk/file'
 # Test github actions locally
 brew "act"
-# Substantially better alternative to spotlight
+# Alfred: Boosts efficiency with hotkeys, text expansion and more
 cask "alfred"
+# Version manager that can handle multiple languages
+brew "asdf"
 brew "brew-file"
-# Tool for debugging GRPC
+# BloomRPC: A GUI Client for GRPC Services
 cask "bloomrpc"
 brew "colordiff"
 # Alternative to postman
 cask "insomnia"
+# iTerm2: Terminal emulator as a replacement for Apple's Terminal app
 cask "iterm2"
 # Terminal autocomplete
 cask "fig"
@@ -98,7 +114,7 @@ brew "mysql-client"
 # Useful for API testing
 cask "postman"
 brew "pre-commit"
-# Keyboard shortcuts for modifying the screen layout
+# Rectangle: Move and resize windows in macOS using keyboard shortcuts or snap areas
 cask "rectangle"
 # Useful for mongo stuff
 cask "robo-3t"
@@ -107,17 +123,14 @@ brew "tmux"
 cask "vagrant"
 brew "vim"
 cask "visual-studio-code"
-# Install different versions of xcode
-brew "xcinfo"
-# Used to run various GUI utilities
+# Used to run X11 applications on macOS
 cask "xquartz"
 brew "yamllint"
 # CLI tool to interact with YAML
 brew "yq"
-# Version manager that can handle multiple languages
-brew "asdf"
 
 ### Android ###
+# apktool: Tool for reverse engineering Android apk files
 brew "apktool"
 # Dex to java decompiler -
 # used for android security work
@@ -126,6 +139,7 @@ brew "jadx"
 ### Bash ###
 # Linting and pre-commit hooks
 brew "shfmt"
+# ShellCheck: Shell script static analysis tool
 brew "shellcheck"
 
 ### Go ###
@@ -135,17 +149,16 @@ brew "go"
 brew "node"
 
 ### Python ###
+# xz: General-purpose data compression software with high compression ratio
 brew "xz"
 brew "pyenv"
 brew "pipenv"
-# Linting and pre-commit hooks
-brew "black"
-brew "pylint"
 
 ### Ruby ###
 brew "ruby"
 
 ### Web Browsers ###
+# Chromium: Open-source web browser project from which Google Chrome draws its source code
 cask "chromium"
 cask "firefox"
 cask "google-chrome"
@@ -162,7 +175,7 @@ cask "spotify"
 # Great recon tool
 tap "caffix/amass"
 brew "amass"
-# Static Code Analysis for IaC
+# Checkov: Infrastructure as Code static code analysis tool
 brew "checkov"
 # Interact with and manipulate metadata
 brew "exiftool"
@@ -185,8 +198,9 @@ brew "nmap"
 # MAC address spoofing
 brew "spoof-mac"
 brew "sqlmap"
-cask "wireshark"
+# Wireshark: capture packets
 # If your list of available capture interfaces is empty
 # (default macOS behavior), install ChmodBPF
+cask "wireshark"
 # One of the best static code analysis tools out there
 brew "semgrep"
