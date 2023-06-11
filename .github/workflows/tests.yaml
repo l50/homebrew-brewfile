@@ -68,16 +68,16 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3.1.0
 
-      - name: Remove problematic pre-installed artifacts
+      - name: Remove problematic pre-installed artifacts and conflict binaries
         run: |
-          # For black
-          rm /usr/local/bin/2to3-3.11
           # For aws
           rm /usr/local/bin/aws
           rm /usr/local/bin/aws_completer
           # For go
           rm /usr/local/bin/go
           rm /usr/local/bin/gofmt
+          # For kubectl
+          rm /usr/local/bin/kubectl
 
       - name: Test Brewfile
         run: brew bundle -v

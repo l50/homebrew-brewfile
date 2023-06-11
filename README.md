@@ -83,6 +83,14 @@ If you're having trouble, please refer to the [debugging doc](docs/debugging.md)
 
 ---
 
+### Test actions locally
+
+```bash
+act -P macos-latest=-self-hosted
+```
+
+---
+
 ## Useful Resources
 
 - <https://thoughtbot.com/blog/brewfile-a-gemfile-but-for-homebrew>
