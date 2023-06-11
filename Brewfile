@@ -15,7 +15,7 @@ cask "google-cloud-sdk"
 # Check spelling programmatically
 brew "aspell"
 brew "bash"
-brew "bash-completion"
+brew "bash-completion@2"
 # GNU core utilities
 brew "coreutils"
 brew "curl"
