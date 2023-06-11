@@ -76,8 +76,6 @@ jobs:
           # For go
           rm /usr/local/bin/go
           rm /usr/local/bin/gofmt
-          # For kubectl
-          rm /usr/local/bin/kubectl
 
       - name: Test Brewfile
         run: brew bundle -v

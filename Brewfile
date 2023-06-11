@@ -75,7 +75,7 @@ brew "helm"
 # Lightweight utility to set up k3s
 # on any local or remote VM.
 brew "k3sup"
-brew "kubectl"
+# brew "kubectl"
 # Provides kubectx and kubens
 brew "kubectx"
 # Template-free customization of Kubernetes YAML manifests
