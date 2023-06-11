@@ -114,6 +114,8 @@ cask "xquartz"
 brew "yamllint"
 # CLI tool to interact with YAML
 brew "yq"
+# Version manager that can handle multiple languages
+brew "asdf"
 
 ### Android ###
 brew "apktool"
@@ -188,5 +190,3 @@ cask "wireshark"
 # (default macOS behavior), install ChmodBPF
 # One of the best static code analysis tools out there
 brew "semgrep"
-# Version manager that can handle multiple languages
-brew "asdf"
