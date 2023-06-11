@@ -46,7 +46,8 @@ repos:
         name: Update Brewfile
         entry: .hooks/update-brewfile.sh
         language: script
-      - id: run-bats-tests
-        name: Run BATS tests
+      - id: bats-tests
+        name: Bats tests
+        description: This hook runs Bats tests on .bats files
         entry: .hooks/run-bats-tests.sh
         language: script
