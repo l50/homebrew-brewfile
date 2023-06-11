@@ -33,8 +33,7 @@ env:
   HOMEBREW_NO_INSTALL_CLEANUP: true
 
 jobs:
-  test:
-    name: Build and configure the Brewfile test environment
+  setup:
     runs-on: macos-latest
     steps:
       - name: Set up git repository
@@ -60,8 +59,22 @@ jobs:
           rm /usr/local/bin/go
           rm /usr/local/bin/gofmt
 
-      - name: Test Brewfile
-        run: brew bundle -v
+  bats_tests:
+    needs: setup
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3.1.0
 
       - name: Run Bats tests
         run: bats tests/brew_upgrade_tests.bats
+
+  brewfile_test:
+    needs: setup
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3.1.0
+
+      - name: Test Brewfile
+        run: brew bundle -v
