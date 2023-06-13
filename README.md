@@ -51,10 +51,10 @@ cp Brewfile ~/.brewfile/Brewfile
 - Install dependencies from Brewfile:
 
 ```bash
-brew bundle
+brew file update
 
 # If you prefer verbose output:
-brew bundle -v
+brew file update --verbose debug --appstore 0
 ```
 
 - Update all brew packages manually:
