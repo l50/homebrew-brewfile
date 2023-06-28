@@ -142,20 +142,8 @@ brew "shfmt"
 # ShellCheck: Shell script static analysis tool
 brew "shellcheck"
 
-### Go ###
-brew "go"
-
-### JS  ###
-brew "node"
-
-### Python ###
 # xz: General-purpose data compression software with high compression ratio
 brew "xz"
-brew "pyenv"
-brew "pipenv"
-
-### Ruby ###
-brew "ruby"
 
 ### Web Browsers ###
 # Chromium: Open-source web browser project from which Google Chrome draws its source code
