@@ -41,40 +41,44 @@ This repo is used to manage the packages installed on my Macs.
 
 - Install homebrew:
 
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
+  ```bash
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  ```
 
 - Install [homebrew-file](https://github.com/rcmdnk/homebrew-file):
 
-```bash
-brew tap rcmdnk/file
-brew install brew-file
-```
+  ```bash
+  brew tap rcmdnk/file
+  brew install brew-file
+  ```
 
 - Install and run pre-commit hooks:
 
-```bash
-mage runprecommit
-```
+  ```bash
+  mage runprecommit
+  ```
 
 - Setup the Brewfile found in this repo on the local system:
 
-```bash
-mage setup
-# Run update once to install everything:
-mage update
-```
+  ```bash
+  mage setup
+  ```
 
 ---
 
 ## Usage
 
+- Ensure all packages managed by `brew` are installed:
+
+  ```bash
+  mage run
+  ```
+
 - Update everything:
 
-```go
-mage update
-```
+  ```go
+  mage update
+  ```
 
 ---
 

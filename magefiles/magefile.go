@@ -14,6 +14,8 @@ import (
 	"github.com/magefile/mage/mg"
 )
 
+var home string
+
 func init() {
 	os.Setenv("GO111MODULE", "on")
 }
@@ -110,6 +112,23 @@ func Update() error {
 		if _, err := sys.RunCommand("brew", cmd); err != nil {
 			return fmt.Errorf("failed to update brewfile: %v", err)
 		}
+	}
+
+	return nil
+}
+
+// Run runs the Brewfile
+func Run() error {
+	home, err := sys.GetHomeDir()
+	if err != nil {
+		return err
+	}
+
+	fmt.Println("Running brew bundle")
+
+	sys.Cd(filepath.Join(home, ".brewfile", "Brewfile"))
+	if _, err := sys.RunCommand("brew", "bundle"); err != nil {
+		return fmt.Errorf("failed to run brewfile: %v", err)
 	}
 
 	return nil
