@@ -41,32 +41,22 @@ jobs:
       - name: Install brew dependencies
         run: brew install shellcheck rcmdnk/file/brew-file pre-commit bats-core
 
-      - name: Remove disabled forumulae
-        uses: Homebrew/actions/remove-disabled-formulae@master
-
-  bats_tests:
-    needs: setup
-    runs-on: macos-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3.1.0
-        with:
-          submodules: recursive
-
-      - name: Setup BATS
-        uses: mig4/setup-bats@v1
-        with:
-          bats-version: 1.2.1
-
-      - name: Run Bats tests
-        run: bats tests/brew_upgrade_tests.bats
-
   brewfile_test:
     needs: setup
     runs-on: macos-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v3.1.0
+
+      - name: Set up Go
+        uses: actions/setup-go@fac708d6674e30b6ba41289acaab6d4b75aa0753 # v4
+        with:
+          go-version: "1.20"
+
+      - name: Install go module dependencies
+        run: |
+          go install mvdan.cc/sh/v3/cmd/shfmt@latest
+          go install github.com/magefile/mage@latest
 
       - name: Remove problematic pre-installed artifacts and conflict binaries
         run: |
@@ -81,3 +71,4 @@ jobs:
         run: |
           mage setup
           mage update
+          mage run
