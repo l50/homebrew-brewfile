@@ -34,9 +34,7 @@ jobs:
         run: pip3 install pre-commit
 
       - name: Run go mod tidy - necessary to avoid errors with dependabot PRs
-        run: |
-          go mod tidy
-          pushd magefiles; go mod tidy; popd
+        run: pushd magefiles; go mod tidy; popd
 
       - name: Commit go.mod and go.sum changes to keep pre-commit happy
         run: |
