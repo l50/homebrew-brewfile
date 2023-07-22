@@ -1004,9 +1004,7 @@
         },
         "options": {
           "link": true,
-          "conflicts_with": [
-            "python@2"
-          ]
+          "conflicts_with": ["python@2"]
         }
       },
       "macvim": {
