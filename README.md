@@ -3,9 +3,41 @@
 [![Test Brewfile](https://github.com/l50/homebrew-brewfile/actions/workflows/tests.yaml/badge.svg)](https://github.com/l50/homebrew-brewfile/actions/workflows/tests.yaml)
 [![License](https://img.shields.io/github/license/l50/homebrew-brewfile?label=License&style=flat&color=blue&logo=github)](https://github.com/l50/homebrew-brewfile/blob/main/LICENSE)
 
-Used to install packages that I like to have on my Macs.
+This repo is used to manage the packages installed on my Macs.
 
-## Setup
+## Dependencies
+
+- [Install asdf](https://asdf-vm.com/):
+
+  ```bash
+  git clone https://github.com/asdf-vm/asdf.git ~/.asdf
+  ```
+
+- Install and use asdf plugins to manage go, python, and ruby for this project:
+
+  ```bash
+  source .asdf
+  ```
+
+  Alternatively, you can pick and choose which plugins to install:
+
+  ```bash
+  # Employ asdf for this project's python:
+  source .asdf python
+  ```
+
+- [Install pre-commit](https://pre-commit.com/):
+
+  ```bash
+  python3 -m pip install --upgrade pip
+  python3 -m pip install pre-commit
+  ```
+
+- [Install Mage](https://magefile.org/):
+
+  ```bash
+  go install github.com/magefile/mage@latest
+  ```
 
 - Install homebrew:
 
@@ -13,47 +45,33 @@ Used to install packages that I like to have on my Macs.
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-- Setup with Homebrew-file:
+- Install [homebrew-file](https://github.com/rcmdnk/homebrew-file):
 
 ```bash
 brew tap rcmdnk/file
 brew install brew-file
-# From the root of the cloned repo
-if [[ ! -d "${HOME}/.brewfile" ]]; then
-  mkdir ~/.brewfile
-fi
-cp Brewfile ~/.brewfile/Brewfile
+```
+
+- Install and run pre-commit hooks:
+
+```bash
+mage runprecommit
+```
+
+- Setup the Brewfile found in this repo on the local system:
+
+```bash
+mage setup
 ```
 
 ---
 
 ## Usage
 
-- Install dependencies from Brewfile:
+- Update everything:
 
-```bash
-brew file update
-
-# If you prefer verbose output:
-brew file update --verbose debug --appstore 0
-```
-
-- Update all brew packages manually:
-
-```bash
-brew file update --verbose 5
-```
-
-- Install pre-commit hooks:
-
-```bash
-pre-commit install
-```
-
-- Run pre-commit hooks manually:
-
-```bash
-pre-commit run --all-files
+```go
+mage update
 ```
 
 ---
