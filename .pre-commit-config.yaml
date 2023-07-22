@@ -5,9 +5,11 @@ repos:
     hooks:
       - id: check-case-conflict
       - id: check-merge-conflict
+      - id: check-symlinks
       - id: end-of-file-fixer
       - id: trailing-whitespace
       - id: check-added-large-files
+      - id: detect-private-key
       - id: check-shebang-scripts-are-executable
 
   - repo: https://github.com/adrienverge/yamllint.git
@@ -22,6 +24,12 @@ repos:
       - id: prettier
         files: \.(json|md|yaml|yml)$
 
+  - repo: https://github.com/codespell-project/codespell
+    rev: v2.2.5
+    hooks:
+      - id: codespell
+        entry: codespell -q 3 -f --skip=".git,.github" README.md
+
   - repo: https://github.com/jumanjihouse/pre-commit-hooks
     rev: 3.0.0
     hooks:
@@ -33,9 +41,3 @@ repos:
       - id: shfmt
       # Configuration in .mdlrc and .hooks/linters/mdstyle.rb
       - id: markdownlint
-
-  - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.5
-    hooks:
-      - id: codespell
-        entry: codespell -q 3 -f --skip=".git,.github" README.md
