@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-output=$(brew file update --verbose 5 --appstore 0 2>&1)
+output=$(brew file update --verbose debug --no-appstore)
 exit_code=$?
 echo "${output}"
 exit ${exit_code}
