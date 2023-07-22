@@ -78,4 +78,6 @@ jobs:
           rm /usr/local/bin/gofmt
 
       - name: Test Brewfile
-        run: bash .hooks/update-brewfile.sh
+        run: |
+          mage setup
+          mage update
