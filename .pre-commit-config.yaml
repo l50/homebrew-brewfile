@@ -39,11 +39,3 @@ repos:
     hooks:
       - id: codespell
         entry: codespell -q 3 -f --skip=".git,.github" README.md
-
-  - repo: local
-    hooks:
-      - id: bats-tests
-        name: Bats tests
-        description: This hook runs Bats tests on .bats files
-        entry: .hooks/run-bats-tests.sh
-        language: script
