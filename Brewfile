@@ -59,8 +59,6 @@ cask "docker"
 brew "helm"
 # Lightweight utility to set up k3s on any local or remote VM
 brew "k3sup"
-# Provides kubectx and kubens
-brew "kubectx"
 # Template-free customization of Kubernetes YAML manifests
 brew "kustomize"
 # Create k8s test environments
