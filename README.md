@@ -62,6 +62,8 @@ mage runprecommit
 
 ```bash
 mage setup
+# Run update once to install everything:
+mage update
 ```
 
 ---

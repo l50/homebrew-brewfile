@@ -97,16 +97,19 @@ func Setup() error {
 	return nil
 }
 
-// Update executes the following actions:
-// brew update
-// brew upgrade
-// brew cask upgrade
-// brew install
-// brew init
+// Update updates various components of
+// the Brewfile on the local system.
 func Update() error {
-	_, err := sys.RunCommand("brew", "file", "update")
-	if err != nil {
-		return fmt.Errorf("failed to update brewfile: %v", err)
+	commands := []string{
+		"update",
+		"upgrade",
+	}
+
+	for _, cmd := range commands {
+		fmt.Println("Running brew", cmd)
+		if _, err := sys.RunCommand("brew", cmd); err != nil {
+			return fmt.Errorf("failed to update brewfile: %v", err)
+		}
 	}
 
 	return nil
