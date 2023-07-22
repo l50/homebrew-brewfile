@@ -83,7 +83,13 @@ func Setup() error {
 	}
 	defer sys.Cd(cwd)
 
-	_, err = sys.RunCommand("brew", "file", "set_repo", "-r", "l50/homebrew-brewfile", "-y")
+	home, err := sys.GetHomeDir()
+	if err != nil {
+		return err
+	}
+
+	err = sys.Cp(filepath.Join(repoRoot, "Brewfile"),
+		filepath.Join(home, ".brewfile", "Brewfile", "Brewfile"))
 	if err != nil {
 		return fmt.Errorf("failed to set brewfile repo: %v", err)
 	}
@@ -97,8 +103,6 @@ func Setup() error {
 // brew cask upgrade
 // brew install
 // brew init
-// brew pull
-// brew push
 func Update() error {
 	_, err := sys.RunCommand("brew", "file", "update")
 	if err != nil {
