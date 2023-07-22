@@ -88,11 +88,6 @@ func Setup() error {
 		return fmt.Errorf("failed to set brewfile repo: %v", err)
 	}
 
-	// Run Update to get everything in place and up-to-date
-	if err := Update(); err != nil {
-		return err
-	}
-
 	return nil
 }
 
