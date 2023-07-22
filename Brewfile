@@ -1,9 +1,10 @@
-tap 'homebrew/core'
 tap "homebrew/bundle"
 
 ### AWS ###
 # CLI tool to interact with AWS services
 brew "awscli"
+# Incredibly useful tool to assume roles in AWS
+brew "awsume"
 # Used by AWS to connect to instances without SSH key
 cask "session-manager-plugin"
 
@@ -35,11 +36,6 @@ brew "netcat"
 brew "p7zip"
 # htop: An interactive process viewer for Unix
 brew "htop"
-brew "logrotate"
-# GNU netcat
-brew "netcat"
-# 7z
-brew "p7zip"
 # Linting for bash scripts
 brew "shfmt"
 # More linting for bash scripts
@@ -135,12 +131,6 @@ brew "apktool"
 # Dex to java decompiler -
 # used for android security work
 brew "jadx"
-
-### Bash ###
-# Linting and pre-commit hooks
-brew "shfmt"
-# ShellCheck: Shell script static analysis tool
-brew "shellcheck"
 
 # xz: General-purpose data compression software with high compression ratio
 brew "xz"
