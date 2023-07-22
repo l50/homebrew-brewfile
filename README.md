@@ -1,7 +1,8 @@
 # homebrew-brewfile
 
-[![Test Brewfile](https://github.com/l50/homebrew-brewfile/actions/workflows/tests.yaml/badge.svg)](https://github.com/l50/homebrew-brewfile/actions/workflows/tests.yaml)
 [![License](https://img.shields.io/github/license/l50/homebrew-brewfile?label=License&style=flat&color=blue&logo=github)](https://github.com/l50/homebrew-brewfile/blob/main/LICENSE)
+[![Test Brewfile](https://github.com/l50/homebrew-brewfile/actions/workflows/tests.yaml/badge.svg)](https://github.com/l50/homebrew-brewfile/actions/workflows/tests.yaml)
+[![Pre-Commit](https://github.com/l50/homebrew-brewfile/actions/workflows/pre-commit.yaml/badge.svg)](https://github.com/l50/homebrew-brewfile/actions/workflows/pre-commit.yaml)
 
 This repo is used to manage the packages installed on my Macs.
 
