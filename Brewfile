@@ -9,10 +9,6 @@ brew "awsume"
 # Used by AWS to connect to instances without SSH key
 cask "session-manager-plugin"
 
-# Google Cloud
-# Google Cloud SDK provides tools for interacting with Google Cloud services
-cask "google-cloud-sdk"
-
 ### Unix-like System Utilities ###
 # Basic utilities and tools
 brew "aspell"

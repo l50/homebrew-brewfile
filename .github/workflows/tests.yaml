@@ -39,7 +39,7 @@ jobs:
         uses: Homebrew/actions/setup-homebrew@master
 
       - name: Install brew dependencies
-        run: brew install shellcheck rcmdnk/file/brew-file pre-commit bats-core
+        run: brew install rcmdnk/file/brew-file bats-core
 
   brewfile_test:
     needs: setup
