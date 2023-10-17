@@ -1,0 +1,23 @@
+---
+area/github:
+  - ".github/**/*"
+
+area/pre-commit:
+  - ".pre-commit-config.yaml"
+  - ".hooks/**/*"
+
+area/license:
+  - "LICENSE"
+
+area/readme:
+  - "README.md"
+
+area/docs:
+  - "docs/**/*"
+
+area/magefiles:
+  - "magefiles/**/*"
+
+area/brew:
+  - "Brewfile"
+  - "Brewfile.lock.json"

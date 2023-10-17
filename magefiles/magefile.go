@@ -1,4 +1,5 @@
 //go:build mage
+// +build mage
 
 package main
 
@@ -9,20 +10,44 @@ import (
 
 	"github.com/l50/goutils/v2/dev/lint"
 	mageutils "github.com/l50/goutils/v2/dev/mage"
+	"github.com/l50/goutils/v2/docs"
 	"github.com/l50/goutils/v2/git"
 	"github.com/l50/goutils/v2/sys"
-	"github.com/magefile/mage/mg"
+	"github.com/spf13/afero"
 )
-
-var home string
 
 func init() {
 	os.Setenv("GO111MODULE", "on")
 }
 
-// InstallDeps Installs go dependencies
+// InstallDeps installs the Go dependencies necessary for developing
+// on the project.
+//
+// Example usage:
+//
+// ```bash
+// mage installdeps
+// ```
+//
+// **Returns:**
+//
+// error: An error if any issue occurs while trying to
+// install the dependencies.
 func InstallDeps() error {
 	fmt.Println("Installing dependencies.")
+
+	cwd := sys.Gwd()
+	if err := sys.Cd("magefiles"); err != nil {
+		return fmt.Errorf("failed to cd into magefiles directory: %v", err)
+	}
+
+	if err := mageutils.Tidy(); err != nil {
+		return fmt.Errorf("failed to install dependencies: %v", err)
+	}
+
+	if err := sys.Cd(cwd); err != nil {
+		return fmt.Errorf("failed to cd into project root directory: %v", err)
+	}
 
 	if err := lint.InstallGoPCDeps(); err != nil {
 		return fmt.Errorf("failed to install pre-commit dependencies: %v", err)
@@ -35,7 +60,23 @@ func InstallDeps() error {
 	return nil
 }
 
-// RunPreCommit runs all pre-commit hooks locally
+// RunPreCommit updates, clears, and executes all pre-commit hooks
+// locally. The function follows a three-step process:
+//
+// First, it updates the pre-commit hooks.
+// Next, it clears the pre-commit cache to ensure a clean environment.
+// Lastly, it executes all pre-commit hooks locally.
+//
+// Example usage:
+//
+// ```bash
+// mage runprecommit
+// ```
+//
+// **Returns:**
+//
+// error: An error if any issue occurs at any of the three stages
+// of the process.
 func RunPreCommit() error {
 	fmt.Println("Updating pre-commit hooks.")
 	if err := lint.UpdatePCHooks(); err != nil {
@@ -55,10 +96,18 @@ func RunPreCommit() error {
 	return nil
 }
 
-// RunTests runs all of the unit tests
+// RunTests runs all of the bats test for custom pre-commit hooks
+//
+// Example usage:
+//
+// ```bash
+// mage runtests
+// ```
+//
+// **Returns:**
+//
+// error: An error if any issue occurs while trying to
 func RunTests() error {
-	mg.Deps(InstallDeps)
-
 	if _, err := sys.RunCommand("bash", filepath.Join(".hooks", "run-bats-tests.sh")); err != nil {
 		return fmt.Errorf("failed to run unit tests: %v", err)
 	}
@@ -67,6 +116,18 @@ func RunTests() error {
 }
 
 // Setup initializes and configures the homebrew-brewfile repo
+// on the local system.
+//
+// Example usage:
+//
+// ```bash
+// mage setup
+// ```
+//
+// **Returns:**
+//
+// error: An error if any issue occurs while trying to
+// set up the brewfile repo.
 func Setup() error {
 	// Make sure we are in the repo root
 	repoRoot, err := git.RepoRoot()
@@ -101,6 +162,17 @@ func Setup() error {
 
 // Update updates various components of
 // the Brewfile on the local system.
+//
+// Example usage:
+//
+// ```bash
+// mage update
+// ```
+//
+// **Returns:**
+//
+// error: An error if any issue occurs while trying to
+// update the Brewfile.
 func Update() error {
 	commands := []string{
 		"update",
@@ -117,7 +189,18 @@ func Update() error {
 	return nil
 }
 
-// Run runs the Brewfile
+// Run runs the Brewfile on the local system.
+//
+// Example usage:
+//
+// ```bash
+// mage run
+// ```
+//
+// **Returns:**
+//
+// error: An error if any issue occurs while trying to
+// run the Brewfile.
 func Run() error {
 	home, err := sys.GetHomeDir()
 	if err != nil {
@@ -129,6 +212,40 @@ func Run() error {
 	sys.Cd(filepath.Join(home, ".brewfile", "Brewfile"))
 	if _, err := sys.RunCommand("brew", "bundle"); err != nil {
 		return fmt.Errorf("failed to run brewfile: %v", err)
+	}
+
+	return nil
+}
+
+// GeneratePackageDocs creates documentation for the various packages
+// in the project.
+//
+// Example usage:
+//
+// ```go
+// mage generatepackagedocs
+// ```
+//
+// **Returns:**
+//
+// error: An error if any issue occurs during documentation generation.
+func GeneratePackageDocs() error {
+	fs := afero.NewOsFs()
+
+	repoRoot, err := git.RepoRoot()
+	if err != nil {
+		return fmt.Errorf("failed to get repo root: %v", err)
+	}
+	sys.Cd(repoRoot)
+
+	repo := docs.Repo{
+		Owner: "l50",
+		Name:  "homebrew-brewfile",
+	}
+
+	templatePath := filepath.Join("magefiles", "tmpl", "README.md.tmpl")
+	if err := docs.CreatePackageDocs(fs, repo, templatePath); err != nil {
+		return fmt.Errorf("failed to create package docs: %v", err)
 	}
 
 	return nil
