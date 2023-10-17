@@ -2,8 +2,6 @@ module magefile
 
 go 1.21
 
-toolchain go1.21.2
-
 require (
 	github.com/l50/goutils/v2 v2.0.9
 	github.com/spf13/afero v1.9.5
