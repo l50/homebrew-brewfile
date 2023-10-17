@@ -43,12 +43,6 @@ brew "terragrunt"
 brew "tflint"
 brew "serverless"
 
-### Configuration Management ###
-# Ansible: Provides enterprise-level solutions for IT automation
-brew "ansible"
-# Used to create and run tests for ansible
-brew "molecule"
-
 ### Container Orchestration ###
 # Docker: Enables developers to build and share applications through containers
 cask "docker"
@@ -71,7 +65,6 @@ cask "bloomrpc"
 brew "colordiff"
 cask "insomnia"
 cask "iterm2"
-cask "fig"
 brew "gh"
 brew "git"
 brew "jq"
@@ -82,7 +75,6 @@ cask "rectangle"
 cask "robo-3t"
 cask "scroll-reverser"
 brew "tmux"
-cask "vagrant"
 brew "vim"
 cask "visual-studio-code"
 cask "xquartz"
