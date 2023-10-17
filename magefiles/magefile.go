@@ -149,7 +149,6 @@ func Setup() error {
 	defer func() {
 		cdErr = sys.Cd(cwd)
 	}()
-
 	if cdErr != nil {
 		return fmt.Errorf("failed to cd back to %s: %v", cwd, cdErr)
 	}
