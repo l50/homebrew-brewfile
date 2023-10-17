@@ -61,11 +61,11 @@ jobs:
       - name: Remove problematic pre-installed artifacts and conflict binaries
         run: |
           # For aws
-          rm /usr/local/bin/aws
-          rm /usr/local/bin/aws_completer
+          rm "$(which aws)"
+          rm "$(which aws_completer)"
           # For go
-          rm /usr/local/bin/go
-          rm /usr/local/bin/gofmt
+          rm "$(which go)"
+          rm "$(which gofmt)"
 
       - name: Test Brewfile
         run: |

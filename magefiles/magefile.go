@@ -136,24 +136,33 @@ func Setup() error {
 	}
 
 	// Get the current working directory
-	// so that we can return to it in the event
-	// that we are not in the repo root
+	// so that we can return to it
 	cwd := sys.Gwd()
+
 	if cwd != repoRoot {
 		if err := sys.Cd(repoRoot); err != nil {
 			return err
 		}
 	}
-	defer sys.Cd(cwd)
+
+	var cdErr error
+	defer func() {
+		cdErr = sys.Cd(cwd)
+	}()
+
+	if cdErr != nil {
+		return fmt.Errorf("failed to cd back to %s: %v", cwd, cdErr)
+	}
 
 	home, err := sys.GetHomeDir()
 	if err != nil {
-		return err
+		return fmt.Errorf("failed to get home directory: %v", err)
 	}
 
-	err = sys.Cp(filepath.Join(repoRoot, "Brewfile"),
-		filepath.Join(home, ".brewfile", "Brewfile", "Brewfile"))
-	if err != nil {
+	// Copy Brewfile to the .brewfile directory - this is necessary
+	// for running brew bundle.
+	if err := sys.Cp(filepath.Join(repoRoot, "Brewfile"),
+		filepath.Join(home, ".brewfile", "Brewfile", "Brewfile")); err != nil {
 		return fmt.Errorf("failed to set brewfile repo: %v", err)
 	}
 
