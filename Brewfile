@@ -41,7 +41,6 @@ brew "terraform"
 brew "terraform-docs"
 brew "terragrunt"
 brew "tflint"
-brew "serverless"
 
 ### Container Orchestration ###
 # Docker: Enables developers to build and share applications through containers
