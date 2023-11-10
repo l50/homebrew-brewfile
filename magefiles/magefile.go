@@ -11,6 +11,7 @@ import (
 	"github.com/l50/goutils/v2/dev/lint"
 	mageutils "github.com/l50/goutils/v2/dev/mage"
 	"github.com/l50/goutils/v2/docs"
+	fileutils "github.com/l50/goutils/v2/file/fileutils"
 	"github.com/l50/goutils/v2/git"
 	"github.com/l50/goutils/v2/sys"
 	"github.com/spf13/afero"
@@ -158,12 +159,28 @@ func Setup() error {
 		return fmt.Errorf("failed to get home directory: %v", err)
 	}
 
-	// Copy Brewfile to the .brewfile directory - this is necessary
-	// for running brew bundle.
-	if err := sys.Cp(filepath.Join(repoRoot, "Brewfile"),
-		filepath.Join(home, ".brewfile", "Brewfile", "Brewfile")); err != nil {
-		return fmt.Errorf("failed to set brewfile repo: %v", err)
+	srcBrewFile := filepath.Join(repoRoot, "Brewfile")
+
+	// Read the contents of the srcBrewFile into a byte slice
+	srcBrewFileContents, err := os.ReadFile(srcBrewFile)
+	if err != nil {
+		return fmt.Errorf("failed to read brewfile contents: %v", err)
 	}
+
+	brewfileInstallPath := filepath.Join(home, ".brewfile", "Brewfile")
+
+	// Copy contents of srcBrewFile to the .brewfile directory - this is necessary
+	// for running brew bundle.
+	if err := fileutils.Create(brewfileInstallPath, srcBrewFileContents, fileutils.CreateFile); err != nil {
+		return fmt.Errorf("failed to create file: %v", err)
+	}
+
+	// // Copy Brewfile to the .brewfile directory - this is necessary
+	// // for running brew bundle.
+	// if err := sys.Cp(filepath.Join(repoRoot, "Brewfile"),
+	// 	filepath.Join(home, ".brewfile", "Brewfile", "Brewfile")); err != nil {
+	// 	return fmt.Errorf("failed to set brewfile repo: %v", err)
+	// }
 
 	return nil
 }
@@ -215,7 +232,7 @@ func Run() error {
 		return err
 	}
 
-	fmt.Println("Running brew bundle")
+	fmt.Println("Installing brew packages, please wait...")
 
 	sys.Cd(filepath.Join(home, ".brewfile", "Brewfile"))
 	if _, err := sys.RunCommand("brew", "bundle"); err != nil {
