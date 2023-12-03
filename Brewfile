@@ -108,6 +108,7 @@ cask "spotify"
 ### Security and Penetration Testing Tools ###
 # Tools for network and application security analysis
 tap "caffix/amass"
+cask "1password-cli"
 brew "amass"
 brew "checkov"
 brew "exiftool"
