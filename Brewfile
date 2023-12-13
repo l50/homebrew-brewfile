@@ -58,7 +58,6 @@ brew "kind"
 tap 'rcmdnk/file'
 brew "act"
 cask "alfred"
-brew "asdf"
 brew "brew-file"
 cask "bloomrpc"
 brew "colordiff"
