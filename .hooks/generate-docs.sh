@@ -28,7 +28,7 @@ fi
 # shellcheck source=/dev/null
 source "${bashutils_path}"
 
-repo_root || exit 1
+rr || exit 1
 
 # Check if mage is installed
 if command -v mage >/dev/null 2>&1; then

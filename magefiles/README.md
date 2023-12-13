@@ -106,26 +106,6 @@ of the process.
 
 ---
 
-### RunTests()
-
-```go
-RunTests() error
-```
-
-RunTests runs all of the bats test for custom pre-commit hooks
-
-Example usage:
-
-```bash
-mage runtests
-```
-
-**Returns:**
-
-error: An error if any issue occurs while trying to
-
----
-
 ### Setup()
 
 ```go

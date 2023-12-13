@@ -97,25 +97,6 @@ func RunPreCommit() error {
 	return nil
 }
 
-// RunTests runs all of the bats test for custom pre-commit hooks
-//
-// Example usage:
-//
-// ```bash
-// mage runtests
-// ```
-//
-// **Returns:**
-//
-// error: An error if any issue occurs while trying to
-func RunTests() error {
-	if _, err := sys.RunCommand("bash", filepath.Join(".hooks", "run-bats-tests.sh")); err != nil {
-		return fmt.Errorf("failed to run unit tests: %v", err)
-	}
-
-	return nil
-}
-
 // Setup initializes and configures the homebrew-brewfile repo
 // on the local system.
 //
