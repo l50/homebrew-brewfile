@@ -25,6 +25,7 @@ brew "htop"
 brew "tree"
 brew "watch"
 brew "wget"
+brew "zsh-completions"
 
 ### Bash Scripting Utilities ###
 # Linting, testing, and formatting for bash scripts
