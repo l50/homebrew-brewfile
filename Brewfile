@@ -2,8 +2,6 @@ tap "homebrew/bundle"
 
 ### Cloud Service Providers ###
 # AWS
-# CLI tool to interact with AWS services
-brew "awscli"
 # Incredibly useful tool to assume roles in AWS
 brew "awsume"
 # Used by AWS to connect to instances without SSH key
@@ -27,6 +25,7 @@ brew "htop"
 brew "tree"
 brew "watch"
 brew "wget"
+brew "zsh-completions"
 
 ### Bash Scripting Utilities ###
 # Linting, testing, and formatting for bash scripts
