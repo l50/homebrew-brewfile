@@ -1,9 +1,10 @@
 tap "homebrew/bundle"
+tap "common-fate/granted"
 
 ### Cloud Service Providers ###
 # AWS
-# Incredibly useful tool to assume roles in AWS
-brew "awsume"
+# Alternative to awsume for accessing AWS accounts
+brew "granted"
 # Used by AWS to connect to instances without SSH key
 cask "session-manager-plugin"
 
