@@ -37,8 +37,6 @@ brew "bats-core"
 
 ### Cloud Agnostic Infrastructure Management ###
 # These tools are used to build, change, and version infrastructure efficiently and safely across multiple providers
-brew "packer"
-brew "terraform"
 brew "terraform-docs"
 brew "terragrunt"
 brew "tflint"
