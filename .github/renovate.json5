@@ -1,45 +1,18 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base",
-    "docker:enableMajor",
-    ":disableRateLimiting",
-    ":dependencyDashboard",
-    ":semanticCommits",
-    ":enablePreCommit",
-    ":automergeDigest",
-    ":automergeBranch",
-    "github>l50/homebrew-brewfile//.github/renovate/autoMerge.json5",
-    "helpers:pinGitHubActionDigests"
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  extends: [
+    'github>CowDogMoo/renovate-config',
+    'github>CowDogMoo/renovate-config:go',
   ],
-  "platform": "github",
-  "onboarding": false,
-  "requireConfig": "optional",
-  "dependencyDashboardTitle": "Renovate Dashboard 🤖",
-  "suppressNotifications": ["prIgnoreNotification"],
-  "rebaseWhen": "conflicted",
-  "commitBodyTable": true,
-  "pre-commit": {
-    "enabled": true
-  },
-"regexManagers": [
+  customManagers: [
     {
-      "fileMatch": [
-        ".sh$"
+      description: 'Track git-tags versions in requirements.yaml',
+      customType: 'regex',
+      managerFilePatterns: ['/requirements\\.yaml$/'],
+      matchStrings: [
+        'name: (?<depName>\\S+)\\n\\s+src: (?<packageName>\\S+)\\n\\s+version: (?<currentValue>\\S+)',
       ],
-      "matchStrings": [
-        "go install (?<depName>[^@]+?)@(?<currentValue>[0-9.-a-zA-Z]+)"
-      ],
-      "datasourceTemplate": "go"
+      datasourceTemplate: 'git-tags',
     },
-    {
-      "fileMatch": [
-        "requirements\\.yaml"
-      ],
-      "matchStrings": [
-        "name: (?<depName>\\S+)\\n\\s+src: (?<lookupName>\\S+)\\n\\s+version: (?<currentValue>\\S+)"
-      ],
-      "datasourceTemplate": "git-tags"
-    }
-  ]
+  ],
 }
