@@ -144,7 +144,7 @@ func Setup() error {
 
 	// Copy contents of srcBrewFile to the .brewfile directory - this is necessary
 	// for running brew bundle.
-	if err := fileutils.Create(brewfileInstallPath, srcBrewFileContents, fileutils.CreateFile); err != nil {
+	if _, err := fileutils.Create(brewfileInstallPath, srcBrewFileContents, fileutils.CreateFile); err != nil {
 		return fmt.Errorf("failed to create file: %v", err)
 	}
 
