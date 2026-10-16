@@ -1,6 +1,6 @@
 module magefile
 
-go 1.21
+go 1.26.0
 
 require (
 	github.com/l50/goutils/v2 v2.1.5
