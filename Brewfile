@@ -1,5 +1,4 @@
-tap "homebrew/bundle"
-tap "common-fate/granted"
+tap "common-fate/granted", trusted: true
 
 ### Cloud Service Providers ###
 # AWS
@@ -39,7 +38,6 @@ brew "bats-core"
 # These tools are used to build, change, and version infrastructure efficiently and safely across multiple providers
 brew "terraform-docs"
 brew "terragrunt"
-brew "tflint"
 
 ### Container Orchestration ###
 # Docker: Enables developers to build and share applications through containers
@@ -54,11 +52,10 @@ brew "kind"
 
 ### Development Environment Tools ###
 # Tools for managing and testing software development environments
-tap 'rcmdnk/file'
+tap 'rcmdnk/file', trusted: true
 brew "act"
 cask "alfred"
 brew "brew-file"
-cask "bloomrpc"
 brew "colordiff"
 brew "docker-completion"
 cask "insomnia"
@@ -69,7 +66,6 @@ brew "jq"
 brew "mas"
 brew "mysql-client"
 cask "rectangle"
-cask "robo-3t"
 cask "scroll-reverser"
 brew "tmux"
 brew "vim"
@@ -89,7 +85,6 @@ brew "xz"
 
 ### Web Browsers ###
 # Various web browsers
-cask "chromium"
 cask "firefox"
 cask "google-chrome"
 
@@ -105,7 +100,7 @@ cask "spotify"
 
 ### Security and Penetration Testing Tools ###
 # Tools for network and application security analysis
-tap "caffix/amass"
+tap "caffix/amass", trusted: true
 cask "1password-cli"
 brew "amass"
 brew "checkov"
