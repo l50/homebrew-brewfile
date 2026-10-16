@@ -56,7 +56,6 @@ tap 'rcmdnk/file', trusted: true
 brew "act"
 cask "alfred"
 brew "brew-file"
-cask "bloomrpc"
 brew "colordiff"
 brew "docker-completion"
 cask "insomnia"
