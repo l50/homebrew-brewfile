@@ -50,14 +50,6 @@ func InstallDeps() error {
 		return fmt.Errorf("failed to cd into project root directory: %v", err)
 	}
 
-	if err := lint.InstallGoPCDeps(); err != nil {
-		return fmt.Errorf("failed to install pre-commit dependencies: %v", err)
-	}
-
-	if err := mageutils.InstallVSCodeModules(); err != nil {
-		return fmt.Errorf("failed to install vscode-go modules: %v", err)
-	}
-
 	return nil
 }
 
