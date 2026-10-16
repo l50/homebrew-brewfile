@@ -61,9 +61,6 @@ jobs:
           # For aws
           rm "$(which aws)"
           rm "$(which aws_completer)"
-          # For go
-          rm "$(which go)"
-          rm "$(which gofmt)"
 
       - name: Test Brewfile
         run: |
